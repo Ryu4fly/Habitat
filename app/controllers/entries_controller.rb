@@ -1,15 +1,32 @@
 class EntriesController < ApplicationController
-  def index
-    @entries = Entry.available
-  end
+    def index
+      @entries = Entry.available
+    end
 
-  def show
-    @entry = Entry.find(entry_param)
-  end
+    def show
+      @entry = Entry.find(entry_param)
+    end
 
-  private
+    def new
+        @entry = Entry.new
+    end
+    def create
+        @entry = Entry.new(entry_params)
 
-  def entry_params
-    params.require(:entry).permit(:date, :feeling, :craving, :user_id)
-  end
+        if @entry.save
+            redirect_to root_path
+        else
+            redirect_to :new
+        end
+    end
+    def destroy
+        @entry = Entry.find(params[:entry_id])
+        @entry.destroy
+    end
+
+    private
+
+    def entry_params
+        params.require(:entry).permit(:date, :feeling, :craving, :user_id)
+    end
 end
