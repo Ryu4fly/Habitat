@@ -1,4 +1,11 @@
 class EntriesController < ApplicationController
+    def index
+      @entries = Entry.available
+    end
+
+    def show
+      @entry = Entry.find(entry_param)
+    end
 
     def new
         @entry = Entry.new
@@ -20,6 +27,6 @@ class EntriesController < ApplicationController
     private
 
     def entry_params
-        params.require(:entry).permit(:craving, :feeling)
+        params.require(:entry).permit(:date, :feeling, :craving, :user_id)
     end
 end
