@@ -12,7 +12,9 @@ class EntriesController < ApplicationController
             redirect_to :new
         end
     end
-    def delete
+    def destroy
+        @entry = Entry.find(params[:entry_id])
+        @entry.destroy
     end
 
     private
