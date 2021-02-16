@@ -13,9 +13,14 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>
+
+    <% if user_signed_in? %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   </body>
 </html>

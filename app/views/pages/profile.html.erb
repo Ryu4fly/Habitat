@@ -1,1 +1,43 @@
-<h1>This is the profile</h1>
+<div class="profile-container">
+
+  <h1>Hello <%= current_user.username %></h1>
+  <h2>Welcome back</h2>
+
+  <div class="cards-container">
+    <div class="cards saved">
+      <span class="iconify dollar-sign" data-icon="bx:bx-dollar-circle" data-inline="false" style="color: #F9D532;"></span>
+      <p>¥204</p>
+      <p>Saved</p>
+    </div>
+
+    <div class="cards cigs">
+      <span class="iconify no-smoking" data-inline="false" data-icon="cil:smoke-free" style="color: #68E2F6;"></span>
+      <p>52</p>
+      <p>Cigarettes</p>
+    </div>
+
+    <div class="cards achievements">
+      <span class="iconify award-icon" data-icon="tabler:award" data-inline="false" style="color: #6EAA62;"></span>
+      <p>2/50</p>
+      <p>Achievements</p>
+    </div>
+
+    <div class="cards stats">
+      <span class="iconify graph-icon" data-icon="bi:graph-up" data-inline="false" style="color: #EF9193;"></span>
+      <p>Stats</p>
+    </div>
+  </div>
+
+  <div class="smoke-free-card">
+
+  </div>
+
+  <div class="leaderboard">
+
+  </div>
+
+  <div class="milestones">
+
+  </div>
+
+</div>

@@ -1,0 +1,43 @@
+.cards {
+  width: 140px;
+  height: 90px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  p {
+    margin: 0;
+  }
+}
+
+.saved {
+  background: linear-gradient(to right top,rgba(43,43,43,1) 63%, rgba(165, 144, 52, 1),rgba(255, 238, 89, 1));
+  .dollar-sign {
+    font-size: 30px;
+  }
+}
+
+.cigs {
+  background: linear-gradient(to right top, rgba(43,43,43,1) 63%, rgba(74, 135, 145, 1),rgba(104, 226, 246, 1));
+  .no-smoking {
+    font-size: 30px;
+  }
+}
+
+.achievements {
+  background: linear-gradient(to right top, rgba(43,43,43,1) 63%, rgba(80, 112, 73, 1),rgba(110, 170, 98, 1));
+  .award-icon {
+    font-size: 30px;
+  }
+}
+
+
+.stats {
+    background: linear-gradient(to right top, rgba(43,43,43,1) 63%, rgba(135, 76, 76, 1), rgba(249, 118, 118, 1));
+    .graph-icon {
+      font-size: 30px;
+    }
+}
+
