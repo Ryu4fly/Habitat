@@ -23,5 +23,16 @@ puts "Generating new users..."
   puts "#{user.id} - #{user.email} created.."
 end
 
+20.times do
+  entry = Entry.new
+  date = DateTime.new(rand(1985..1997), rand(1..12), rand(1..24), rand(1..12), rand(1..35), rand(1..45))
+  entry.date = date
+  entry.feeling = Entry::FEELINGS.sample
+  entry.user = User.all.sample
+  entry.craving = rand(1..10)
+  entry.save
+  puts "New entry: #{entry.date}, feeling - #{entry.feeling}, craving - #{entry.craving}"
+end
+
 
 puts "All users saved"
