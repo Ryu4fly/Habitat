@@ -7,7 +7,9 @@ class Entry < ApplicationRecord
              "I'm at the phone", "I've made love", "I'm drinking a cup of tea", "I'm watching television", "I've just woken up", 
              "I'm working", "i'm in a bar", "I'm celebrating something", "I'm partying", "I'm with smokers", "I want to keep my hands busy", "I'm restless", "i'm missing the smell of cigarettes", "I'mmissing the taste of cigarettes", "I'm touching an object related to tobacco", "I'm taking a walk", "I'm hungry", "Nothing special", "Other"]
 
-  validates :craving, numericality: { only_integer: true }, presence: true, inclusion: (1..10)
+  validates :craving, numericality: { only_integer: true }, presence: true, inclusion: (0..10)
   validates :date, presence: true
   validates :feeling, presence: true, inclusion: FEELINGS
+  validates :cig_smoked, presence: true, numericality: { only_integer: true }, inclusion: (0..50)
+  validates :context, presence: true, inclusion: CONTEXT
 end
