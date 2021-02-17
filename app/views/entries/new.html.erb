@@ -1,1 +1,12 @@
-<h1>Hi</h1>
+<div class="diary">
+  <h1>Create a new entry</h1>
+  <p>Take a moment to fill in a few details about how you feel.</p>
+</div>
+<div class="form">
+  <%= simple_form_for @entry do |f| %>
+    <%= f.input :date, label: "When did it happen?" %>
+    <%= f.input :craving, as: :range, label: "Craving intensity:" %>
+    <%= f.input :feeling, collection: Entry::FEELINGS, label: "How about your feelings?" %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+</div>
