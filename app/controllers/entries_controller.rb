@@ -1,32 +1,42 @@
 class EntriesController < ApplicationController
-    def index
-      @entries = Entry.available
-    end
+  before_action :find_entry, only: [:show, :destroy]
 
-    def show
-      @entry = Entry.find(entry_param)
-    end
+  def index
+    @entries = Entry.all
+    @entries = policy_scope(Entry)
+  end
 
-    def new
-        @entry = Entry.new
-    end
-    def create
-        @entry = Entry.new(entry_params)
+  def show
+  end
 
-        if @entry.save
-            redirect_to root_path
-        else
-            redirect_to :new
-        end
-    end
-    def destroy
-        @entry = Entry.find(params[:entry_id])
-        @entry.destroy
-    end
+  def new
+    @entry = Entry.new
+    authorize @entry
+  end
 
-    private
-
-    def entry_params
-        params.require(:entry).permit(:date, :feeling, :craving, :user_id)
+  def create
+    @entry = Entry.new(entry_params)
+    @entry.user = current_user
+    authorize @restaurant
+    if @entry.save
+      redirect_to root_path
+    else
+      redirect_to :new
     end
+  end
+
+  def destroy
+    @entry.destroy
+  end
+
+  private
+
+  def find_entry
+    @entry = Entry.find(params[:id])
+    authorize @entry
+  end
+
+  def entry_params
+    params.require(:entry).permit(:date, :feeling, :craving)
+  end
 end
