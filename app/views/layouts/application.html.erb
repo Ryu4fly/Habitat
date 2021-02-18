@@ -17,7 +17,7 @@
 
     <%= yield %>
 
-    <% if user_signed_in? %>
+    <% if user_signed_in? && params[:controller] == 'pages' && params[:action] == 'profile'%>
       <%= render 'shared/navbar' %>
     <% end %>
 
