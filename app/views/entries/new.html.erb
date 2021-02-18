@@ -5,12 +5,12 @@
   </div>
   <div class="form">
     <%= simple_form_for @entry do |f| %>
-      <%= f.input :date, label: "When did it happen?", wrapper_html: { class: "date" } %>
-      <%= f.input :cig_smoked, as: :integer, label: "N. of cigarettes smoked:" %>
-      <%= f.input :craving, as: :range, input_html: { min: 0, max: 10, step: 1 }, label: "Craving intensity:" %>
-      <%= f.input :feeling, collection: Entry::FEELINGS, label: "How about your feelings?" %>
-      <%= f.input :context, collection: Entry::CONTEXT, label: "Context:" %>
-      <%= f.submit "I'm done", class: "btn btn-primary" %>
+      <%= f.input :date, label: "When did it happen?", input_html: { id: "date" } %>
+      <%= f.input :cig_smoked, as: :integer, label: "How many did you smoke?", input_html: { id: "cig-smoked", value: 0 }, wrapper_html: { id: "cigarettes-smoked" } %>
+      <%= f.input :craving, as: :range, input_html: { min: 0, max: 10, step: 1 }, label: "How strong is your craving from 0 to 10?", input_html: { id: "craving" } %>
+      <%= f.input :feeling, collection: Entry::FEELINGS, label: "How did you feel?", input_html: { id: "feeling" } %>
+      <%= f.input :context, collection: Entry::CONTEXT, label: "Context:", input_html: { id: "context" } %>
+      <%= f.submit "Next", class: "btn next" %>
     <% end %>
   </div>
 </div>
