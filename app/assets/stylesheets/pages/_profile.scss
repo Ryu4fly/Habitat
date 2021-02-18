@@ -17,13 +17,18 @@
     }
   }
 
+  .timer {
+    background-color: gray;
+    height: 30vh;
+  }
+
   .cards-container {
     display: grid;
     grid-template-columns: 140px 140px;
     grid-template-rows: 90px 90px;
     column-gap: 14px;
     row-gap: 8px;
-    margin: 0px 41px 0px 41px;
+    margin: 41px;
   }
 
   .smoke-free-card {
