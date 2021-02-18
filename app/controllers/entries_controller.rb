@@ -37,6 +37,6 @@ class EntriesController < ApplicationController
   end
 
   def entry_params
-    params.require(:entry).permit(:date, :feeling, :craving)
+    params.require(:entry).permit(:date, :feeling, :craving, :cig_smoked, :context)
   end
 end
