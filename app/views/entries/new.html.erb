@@ -1,1 +1,16 @@
-<h1>Hi</h1>
+<div class="diary">
+  <div class="title">
+    <h1>Create a new entry</h1>
+    <p>If you feel like smoking or have smoked recently, take a moment to fill in a few details about how you felt.</p>
+  </div>
+  <div class="form">
+    <%= simple_form_for @entry do |f| %>
+      <%= f.input :date, label: "When did it happen?", input_html: { id: "date" } %>
+      <%= f.input :cig_smoked, as: :integer, label: "How many did you smoke?", input_html: { id: "cig-smoked", value: 0 }, wrapper_html: { id: "cigarettes-smoked" } %>
+      <%= f.input :craving, as: :range, min_max: true, input_html: { min: 0, max: 10, step: 10 }, label: "How strong is your craving from 0 to 10?", input_html: { id: "craving" } %>
+      <%= f.input :feeling, collection: Entry::FEELINGS, label: "How did you feel?", input_html: { id: "feeling" } %>
+      <%= f.input :context, collection: Entry::CONTEXT, label: "Context:", input_html: { id: "context" } %>
+      <%= f.submit "Next", class: "btn next" %>
+    <% end %>
+  </div>
+</div>

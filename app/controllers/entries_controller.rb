@@ -17,11 +17,11 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     @entry.user = current_user
-    authorize @restaurant
+    authorize @entry
     if @entry.save
       redirect_to root_path
     else
-      redirect_to :new
+      render :new
     end
   end
 
@@ -37,6 +37,6 @@ class EntriesController < ApplicationController
   end
 
   def entry_params
-    params.require(:entry).permit(:date, :feeling, :craving)
+    params.require(:entry).permit(:date, :feeling, :craving, :cig_smoked, :context)
   end
 end

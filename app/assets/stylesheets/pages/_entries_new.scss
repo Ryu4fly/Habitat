@@ -1,0 +1,54 @@
+.diary {
+  margin: 0 8%;
+}
+
+.title {
+  color: #F97676;
+  margin-bottom: 2rem;
+  h1 {
+    font-weight: 500;
+    font-size: 1.8rem;
+    padding-top: 2rem;
+  }
+  p {
+    font-size: 0.8rem;
+    font-weight: 300;
+  }
+}
+
+label {
+  color: #E5E5E5;
+}
+
+#date {
+  background-color: $dark-gray;
+  color: #e5e5e5;
+  border: none;
+}
+
+#cig-smoked {
+  background-color: $dark-gray;
+  color: #e5e5e5;
+  border: none;
+}
+
+#cigarettes-smoked {
+  display: flex;
+  align-items: center;
+  label {
+    width: 450%;
+    padding-top: 0.5rem;
+  }
+}
+
+#feeling, #context {
+  background-color: $dark-gray;
+  color: #e5e5e5;
+  // border: none;
+}
+
+.next {
+  background-color: transparent;
+  color: #F97676;
+  padding: 1rem 0;
+}
