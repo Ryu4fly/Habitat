@@ -1,5 +1,21 @@
 .profile-container {
   height: 100vh;
+  color: white;
+
+  .user-welcome {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    h1 {
+      font-size: 20px;
+    }
+
+    h2 {
+      font-size: 15px;
+    }
+  }
 
   .cards-container {
     display: grid;
@@ -8,5 +24,13 @@
     column-gap: 14px;
     row-gap: 8px;
     margin: 0px 41px 0px 41px;
+  }
+
+  .smoke-free-card {
+    width: 340px;
+    height: 123px;
+    background-color: gray;
+    margin: 0px 15px 0px 15px;
+    border-radius: 12px;
   }
 }
