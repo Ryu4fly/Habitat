@@ -2,8 +2,8 @@ class EntriesController < ApplicationController
   before_action :find_entry, only: [:show, :destroy]
 
   def index
-    @entries = Entry.all
-    @entries = policy_scope(Entry)
+    @entries = policy_scope(Entry).order(created_at: :desc)
+    # @entries = policy_scope(Entry)
   end
 
   def show
