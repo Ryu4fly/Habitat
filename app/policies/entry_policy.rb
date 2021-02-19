@@ -10,7 +10,7 @@ class EntryPolicy < ApplicationPolicy
   end
 
   def show?
-    false
+    true
   end
 
   def destroy?

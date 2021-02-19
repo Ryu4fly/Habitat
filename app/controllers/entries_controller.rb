@@ -19,7 +19,7 @@ class EntriesController < ApplicationController
     @entry.user = current_user
     authorize @entry
     if @entry.save
-      redirect_to root_path
+      redirect_to entries_path
     else
       render :new
     end
