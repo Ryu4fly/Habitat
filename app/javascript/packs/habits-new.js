@@ -28,8 +28,8 @@ const postData = async () => {
     body: JSON.stringify({ avg_cig: parseInt(avgCig, 10), cost_a_pack: parseInt(cost_a_pack, 10) })
   });
   console.log(res);
-  if (res.ok && which === 'avg_cig') {
-    refresh();
+  if (res.ok && res.url) {
+    window.location.href = res.url;
   }
 };
 
