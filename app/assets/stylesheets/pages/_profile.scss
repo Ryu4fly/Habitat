@@ -1,5 +1,5 @@
 .profile-container {
-  height: 140vh;
+  height: 126vh;
   color: white;
   display: flex;
   flex-direction: column;
@@ -22,8 +22,12 @@
   }
 
   .timer {
-    background-color: gray;
-    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    margin-bottom: 5vh;
   }
 
   .cards-container {
