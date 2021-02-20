@@ -1,8 +1,12 @@
 <div class="navbar navbar-dark bg-dark navbar-expand-sm navbar-lewagon">
 
-  <span class="iconify icon" data-icon="bx:bx-user" data-inline="false"></span>
+  <%= link_to profile_path, class: "icon" do %>
+    <span class="iconify" data-icon="bx:bx-user" data-inline="false"></span>
+  <% end %>
 
-  <span class="iconify icon" data-icon="uil:diary" data-inline="false"></span>
+  <%= link_to entries_path, class: "icon" do %>
+    <span class="iconify" data-icon="uil:diary" data-inline="false"></span>
+  <% end %>
 
   <%= link_to new_entry_path do  %>
     <div class="add-entry">
