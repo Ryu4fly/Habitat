@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroying all data 📀 ..."
-
+Habit.destroy_all
+Entry.destroy_all
 User.destroy_all
 
 puts "Generating new users..."
