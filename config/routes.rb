@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {registrations: "registrations"}
   root to: 'pages#home'
 
   get "profile", to: "pages#profile", as: :profile
 
   resources :entries, only: [:index, :show, :new, :create, :delete]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :habits, only: [:new, :create]
 end

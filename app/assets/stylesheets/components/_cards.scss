@@ -1,43 +1,55 @@
 .cards {
-  width: 140px;
-  height: 90px;
+  width: 160px;
+  height: 100px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
+
   p {
+    font-size: 1em;
     margin: 0;
   }
 }
 
 .saved {
-  background: linear-gradient(to right top,rgba(43,43,43,0.2) 63%, rgba(165, 144, 52, 0.3),rgba(255, 238, 89,0.5));
+  background: linear-gradient(to right top, rgba(43, 43, 43, 0.2) 63%, rgba(165, 144, 52, 0.3), rgba(255, 238, 89, 0.5));
+
   .dollar-sign {
-    font-size: 30px;
+    font-size: 45px;
   }
 }
 
 .cigs {
-  background: linear-gradient(to right top, rgba(43,43,43,0.2) 63%, rgba(74, 135, 145, 0.3),rgba(104, 226, 246, 0.5));
+  background: linear-gradient(to right top, rgba(43, 43, 43, 0.2) 63%, rgba(74, 135, 145, 0.3), rgba(104, 226, 246, 0.5));
+
   .no-smoking {
-    font-size: 30px;
+    font-size: 45px;
   }
 }
 
 .achievements {
-  background: linear-gradient(to right top, rgba(43,43,43,0.2) 63%, rgba(80, 112, 73, 0.3),rgba(110, 170, 98, 0.5));
+  background: linear-gradient(to right top, rgba(43, 43, 43, 0.2) 63%, rgba(80, 112, 73, 0.3), rgba(110, 170, 98, 0.5));
+
   .award-icon {
-    font-size: 30px;
+    font-size: 45px;
   }
 }
 
 
 .stats {
-    background: linear-gradient(to right top, rgba(43,43,43,0.2) 63%, rgba(135, 76, 76, 0.3), rgba(249, 118, 118, 0.5));
-    .graph-icon {
-      font-size: 30px;
-    }
+  background: linear-gradient(to right top, rgba(43, 43, 43, 0.2) 63%, rgba(135, 76, 76, 0.3), rgba(249, 118, 118, 0.5));
+
+  .graph-icon {
+    font-size: 45px;
+  }
 }
 
+.bulletin-cards {
+  height: 230px;
+  width: 165px;
+  border-radius: 12px;
+  background: white;
+}

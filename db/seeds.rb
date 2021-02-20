@@ -16,11 +16,12 @@ puts "Generating new users..."
   user.email = Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
   user.password = '123456'
   user.username = Faker::Name.unique.name # This will return a unique name every time it is called
-  user.avg_cig = 8
-  user.days_smoke_free = rand 30
-  user.cost_a_pack = rand 450..510
+  habit = Habit.new
+  habit.avg_cig = rand(1..200)
+  habit.cost_a_pack = rand(1.00..20.00).round(2)
+  user.habit = habit
   user.save
-  puts "#{user.id} - #{user.email} created.."
+  puts "new user ✨#{user.id} - #{user.email} \n habit 👉 #{user.habit.avg_cig} cigs a day at #{user.habit.cost_a_pack}$ per pack."
 end
 
 20.times do
