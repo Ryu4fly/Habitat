@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   get "profile", to: "pages#profile", as: :profile
 
-  resources :entries, only: [:index, :show, :new, :create, :delete]
+  resources :entries, only: [:index, :show, :new, :create, :destroy]
   resources :habits, only: [:new, :create]
 end
