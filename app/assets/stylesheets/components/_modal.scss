@@ -1,0 +1,76 @@
+.modal-container {
+  height: 40vh;
+  background: rgba(0, 0, 0, 0.7);
+  border-width: 3px;
+  margin: 0 5vw;
+
+  .modal-header {
+    margin-top: 2vh;
+    padding: 0;
+    border-bottom: 0;
+    height: 25%;
+    flex-direction: column;
+    align-items: center;
+
+    .modal-icon {
+      font-size: 45px;
+    }
+  }
+
+  .modal-body {
+    padding: 0;
+
+    .forecast {
+      margin-left: 20vw;
+      padding-top: 2vh;
+
+      .forecast-text {
+        font-size: 15px;
+      }
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+
+      #currency {
+        margin-right: 2vw;
+        font-size: 16px;
+      }
+
+      #total {
+        font-size: 50px;
+      }
+    }
+  }
+
+  .modal-footer {
+    border-top: none;
+
+    .close-btn {
+      background: linear-gradient(to right top, rgba(43, 43, 43, 0.2) 63%, #4444434d, #ffffff80);
+      border: none;
+    }
+  }
+}
+
+.saved-money-modal {
+  border-image: linear-gradient(to bottom, rgb(255, 238, 89), rgba(0, 0, 0, 0)) 1 100%;
+
+  .modal-title {
+    background: linear-gradient(to bottom, #ffee59 40%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.cig-free-modal {
+  border-image: linear-gradient(to bottom, rgb(104, 226, 246), rgba(0, 0, 0, 0)) 1 100%;
+
+  .modal-title {
+    background: linear-gradient(to bottom, rgb(104, 226, 246) 40%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

@@ -5,5 +5,6 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @habits = current_user.habit
   end
 end
