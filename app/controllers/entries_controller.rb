@@ -19,7 +19,7 @@ class EntriesController < ApplicationController
     @entry.user = current_user
     authorize @entry
     if @entry.save
-      redirect_to root_path
+      redirect_to entries_path
     else
       render :new
     end
@@ -27,6 +27,8 @@ class EntriesController < ApplicationController
 
   def destroy
     @entry.destroy
+
+    redirect_to entries_path
   end
 
   private

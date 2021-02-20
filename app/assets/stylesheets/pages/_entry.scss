@@ -1,0 +1,32 @@
+.nav {
+  display: flex;
+  // padding: 1rem 0;
+  justify-content: space-between;
+}
+
+#delete {
+  padding-top: 1rem;
+  a {
+    text-decoration: none;
+    color: #F95353;
+    font-size: 1rem;
+  }
+}
+
+.entry {
+  display:  flex;
+  justify-content: space-between;
+  padding-bottom: 1.7rem;
+  p {
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+}
+
+.smoked {
+  color: #68E2F6;
+}
+
+.overcome {
+  color: #7EF49F;
+}

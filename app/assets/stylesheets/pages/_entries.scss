@@ -8,7 +8,7 @@ i {
 
 h5 {
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
 }
 
 p {
@@ -18,8 +18,20 @@ p {
   margin: 0;
 }
 
+#back {
+  text-align: right;
+  padding-top: 1rem;
+  a {
+    text-decoration: none;
+    color: #E5E5E5;
+    font-size: 1rem;
+    // margin-left: -5px;
+  }
+}
+
 #diary {
   color: #E5E5E5;
+  margin-left: -5px;
 }
 
 .entry-card {
@@ -39,7 +51,7 @@ p {
   width: 1rem;
   border-radius: 0.5rem;
   position: absolute;
-  left: 1.4rem;
+  left: 22px;
   border-width: 0.3rem;
   border-style: solid;
 }

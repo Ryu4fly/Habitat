@@ -1,0 +1,38 @@
+<div class="diary">
+  <div class="nav">
+    <p id="back"><%= link_to "Back", entries_path %></p>
+    <p id="delete" >
+      <%= link_to "Delete",
+              entry_path(@entry),
+              method: :delete,
+              data: { confirm: "Are you sure?" }
+              %>
+    </p>
+  </div>
+  <div class="entry-show">
+    <div class="title">
+      <% if @entry.cig_smoked.zero? %>
+        <h1 class="overcome">I overcame a craving</h1>
+      <% else %>
+        <h1 class="smoked">I smoked</h1>
+      <% end %>
+      <p><%= @entry.date %></p>
+    </div>
+    <div class="entry-body">
+      <div class="entry">
+        <p>Feeling:</p>
+        <p class="color-text"><%= @entry.feeling.capitalize %></p>
+      </div>
+      <div class="entry">
+        <p>Context:</p>
+        <p class="color-text"><%= @entry.context %></p>
+      </div>
+      <div class="entry">
+        <p>Intensity:</p>
+        <p class="color-text"><%= (@entry.craving / 10) %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'entry-show' %>
