@@ -1,5 +1,4 @@
 const token = document.getElementsByName('csrf-token')[0].content;
-console.log(token);
 let avgCig = '';
 let cost_a_pack = '';
 let currency;
@@ -9,13 +8,10 @@ const numBtns = Array.from(document.querySelectorAll('.num-btn'));
 const numView = document.querySelector('.num-view');
 const question = document.querySelector('.question');
 
-console.log(numBtns);
-
 const refresh = () => {
   question.innerText = 'How much does a pack of cigarettes cost?';
   numView.innerText = '';
   which = 'cost_a_pack';
-  console.log('avg cigs: ', avgCig);
 };
 
 const postData = async () => {
@@ -30,6 +26,8 @@ const postData = async () => {
   console.log(res);
   if (res.ok && res.url) {
     window.location.href = res.url;
+  } else {
+    location.reload();
   }
 };
 
@@ -46,10 +44,12 @@ numBtns.forEach((btn) => {
         numView.innerText = cost_a_pack;
       }
     } else if (btn.innerText === 'OK') {
-      if (which === 'avg_cig') {
+      if (which === 'avg_cig' && avgCig.length > 0) {
         refresh();
-      } else {
+      } else if (which === 'cost_a_pack' && cost_a_pack.length > 0) {
         postData();
+      } else {
+        alert('Please enter a number.');
       }
     } else {
       if (which === 'avg_cig' && avgCig.length < 4) {
