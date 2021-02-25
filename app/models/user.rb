@@ -2,6 +2,10 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
 
   has_many :entries, dependent: :destroy
+  has_many :wins, dependent: :destroy
+  has_many :bets, dependent: :destroy
+  has_many :lanes, dependent: :destroy
+  has_many :losses, dependent: :destroy
   has_one :habit, dependent: :destroy
 
   # Include default devise modules. Others available are:

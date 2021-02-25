@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   resources :entries, only: [:index, :show, :new, :create, :destroy]
   resources :habits, only: [:new, :create]
+  resources :races, only: [:index, :show, :new, :create, :destroy]
 end

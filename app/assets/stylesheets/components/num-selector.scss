@@ -58,3 +58,25 @@
     color: $light-red;
   }
 }
+
+.first-question {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $light-red;
+}
+
+.btns-container {
+  width: 280px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btns-container button {
+  font-size: 32px;
+  width: 100px;
+  margin-top: 64px;
+}
