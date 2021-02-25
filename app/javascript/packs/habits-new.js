@@ -6,7 +6,18 @@ let which = 'avg_cig';
 
 const numBtns = Array.from(document.querySelectorAll('.num-btn'));
 const numView = document.querySelector('.num-view');
+const firstQuestion = document.querySelector('.first-question');
+const numContainer = document.querySelector('.num-container');
 const question = document.querySelector('.question');
+const yesButton = document.getElementById('yes-button');
+const noButton = document.getElementById('no-button');
+
+noButton.addEventListener('click', () => (window.location.href = '/profile'));
+
+yesButton.addEventListener('click', () => {
+  numContainer.style.display = 'flex';
+  firstQuestion.style.display = 'none';
+});
 
 const refresh = () => {
   question.innerText = 'How much does a pack of cigarettes cost?';

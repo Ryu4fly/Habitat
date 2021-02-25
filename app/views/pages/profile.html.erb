@@ -1,57 +1,46 @@
 <div class="profile-container">
-
   <div class="user-welcome">
-      <%= image_tag "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", alt: "alttext", class: "avatar-large"%>
+    <%= image_tag "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", alt: "alttext", class: "avatar-large"%>
     <div class="text">
       <h1>Hello <%= current_user.username %></h1>
       <h2>Welcome back</h2>
     </div>
   </div>
-
-  <div class="timer">
-    <h4>1 Day 2 Hrs 30 Sec</h4>
-    <h3>Cigarettes Free</h3>
-  </div>
-
-  <div class="cards-container">
-    <div class="cards saved" data-toggle="modal" data-target="#money-saved">
-      <span class="iconify dollar-sign" data-icon="bx:bx-dollar-circle" data-inline="false" style="color: #F9D532;"></span>
-      <p>¥204</p>
-      <p>Saved</p>
+  <% if @habits %>
+    <div class="timer">
+      <h4>1 Day 2 Hrs 30 Sec</h4>
+      <h3>Cigarettes Free</h3>
     </div>
-    <%= render 'components/cards_modal', reservation: @habits %>
-
-    <div class="cards cigs" data-toggle="modal" data-target="#cigs-free">
-      <span class="iconify no-smoking" data-inline="false" data-icon="cil:smoke-free" style="color: #68E2F6;"></span>
-      <p>52</p>
-      <p>Cigarettes</p>
+    <div class="cards-container">
+      <div class="cards saved" data-toggle="modal" data-target="#money-saved">
+        <span class="iconify dollar-sign" data-icon="bx:bx-dollar-circle" data-inline="false" style="color: #F9D532;"></span>
+        <p>¥204</p>
+        <p>Saved</p>
+      </div>
+      <%= render 'components/cards_modal', reservation: @habits %>
+      <div class="cards cigs" data-toggle="modal" data-target="#cigs-free">
+        <span class="iconify no-smoking" data-inline="false" data-icon="cil:smoke-free" style="color: #68E2F6;"></span>
+        <p>52</p>
+        <p>Cigarettes</p>
+      </div>
+      <%= render 'components/cards_modal', reservation: @habits %>
+      <div class="cards achievements">
+        <span class="iconify award-icon" data-icon="tabler:award" data-inline="false" style="color: #6EAA62;"></span>
+        <p>2/50</p>
+        <p>Achievements</p>
+      </div>
+      <div class="cards stats">
+        <span class="iconify graph-icon" data-icon="bi:graph-up" data-inline="false" style="color: #EF9193;"></span>
+        <p>Stats</p>
+      </div>
     </div>
-    <%= render 'components/cards_modal', reservation: @habits %>
-
-    <div class="cards achievements">
-      <span class="iconify award-icon" data-icon="tabler:award" data-inline="false" style="color: #6EAA62;"></span>
-      <p>2/50</p>
-      <p>Achievements</p>
+    <div class="smoke-free-tracker">
     </div>
-
-    <div class="cards stats">
-      <span class="iconify graph-icon" data-icon="bi:graph-up" data-inline="false" style="color: #EF9193;"></span>
-      <p>Stats</p>
+    <div class="bulletin-container">
+      <div class="bulletin-cards leaderboard">
+      </div>
+      <div class="bulletin-cards milestones">
+      </div>
     </div>
-  </div>
-
-  <div class="smoke-free-tracker">
-
-  </div>
-
-  <div class="bulletin-container">
-    <div class="bulletin-cards leaderboard">
-
-    </div>
-
-    <div class="bulletin-cards milestones">
-
-    </div>
-  </div>
-
+  <% end %>
 </div>
