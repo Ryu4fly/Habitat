@@ -1,56 +1,68 @@
 .profile-container {
-  height: 126vh;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #5E4319;
 
-  .user-welcome {
-    margin-top: 5vh;
-    padding: 11vw;
-    display: flex;
+  .open-sea {
+    background-image: asset-url("opensea");
+    background-size: cover;
+
+    height: 50vh;
     width: 100vw;
-    align-items: center;
-
-    h1 {
-      font-size: 20px;
-    }
-
-    h2 {
-      font-size: 15px;
-    }
-  }
-
-  .timer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 10vh;
-    margin-bottom: 5vh;
+
+    .profile-scoreboard {
+      background-color: rgb(59,74,61);
+      height: 251px;
+      width: 329px;
+      margin-top: 5vh;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .score-stats {
+        background-color: #312F2F;
+        height: 193px;
+        width: 309px;
+        border-radius: 12px;
+        border-style: solid;
+        border-width: 7px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+
+        #board-title {
+          grid-column: 1/4;
+          text-align: center;
+          align-self: center;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .profile-menu {
+      p {
+        font-size: 12px;
+      }
+
+      .menu-options {
+        display: flex;
+      }
+    }
   }
 
-  .cards-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    column-gap: 14px;
-    row-gap: 8px;
-    margin-bottom: 21px;
+  .crowd-img {
+    background-image: asset-url("crowd");
+    background-size: cover;
+    height: 45vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
   }
 
-  .smoke-free-tracker {
-    width: 340px;
-    height: 123px;
-    background-color: gray;
-    margin: 0px 15px 21px 15px;
-    border-radius: 12px;
-  }
-
-  .bulletin-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 10px;
-    grid-template-rows: 1fr;
-  }
 }
