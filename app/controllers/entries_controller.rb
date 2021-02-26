@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   before_action :find_entry, only: [:show, :destroy]
 
   def index
-    @entries = policy_scope(Entry).order(created_at: :desc)
+    @entries = policy_scope(Entry).order(date: :desc)
     # @entries = policy_scope(Entry)
   end
 
@@ -32,7 +32,10 @@ class EntriesController < ApplicationController
   end
 
   def my_stats
-    @entries = policy_scope(Entry).order(created_at: :desc)
+    @cig_entries = Entry.where('cig_smoked > 0')
+    @date_cigs = reduce_same_date_entries(@cig_entries)
+    
+    authorize @cig_entries
   end
 
   private
@@ -44,5 +47,23 @@ class EntriesController < ApplicationController
 
   def entry_params
     params.require(:entry).permit(:date, :feeling, :craving, :cig_smoked, :context)
+  end
+
+  def reduce_same_date_entries(entries)
+    date_cig = []
+    entries.each do |entry|
+      dates = date_cig.map { |obj| obj[:date] }
+      if date_cig.empty? || !dates.include?(entry.date.to_s)
+        cig_entry = {
+          date: entry.date.to_s,
+          cig_smoked: entry.cig_smoked
+        }
+        date_cig << cig_entry
+      else
+        existing_date = date_cig.select { |obj| obj[:date] == entry.date.to_s }
+        existing_date[0][:cig_smoked] += entry.cig_smoked
+      end
+    end
+    date_cig
   end
 end
