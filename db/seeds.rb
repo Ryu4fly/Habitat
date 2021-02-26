@@ -30,8 +30,9 @@ end
   entry.feeling = Entry::FEELINGS.sample
   entry.user = User.all.sample
   entry.craving = rand(1..10)
+  entry.cig_smoked = rand(0..10)
   entry.save
-  puts "New entry: #{entry.date}, feeling - #{entry.feeling}, craving - #{entry.craving}"
+  puts "New entry: #{entry.date}, feeling - #{entry.feeling}, craving - #{entry.craving}, cig smoked: #{entry.cig_smoked}"
 end
 
 def days_in_month(month)

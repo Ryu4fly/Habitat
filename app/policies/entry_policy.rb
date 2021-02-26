@@ -16,4 +16,8 @@ class EntryPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def my_stats?
+    true
+  end
 end

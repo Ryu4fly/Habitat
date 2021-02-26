@@ -31,6 +31,10 @@ class EntriesController < ApplicationController
     redirect_to entries_path
   end
 
+  def my_stats
+    @entries = policy_scope(Entry).order(created_at: :desc)
+  end
+
   private
 
   def find_entry
