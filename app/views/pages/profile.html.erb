@@ -11,9 +11,11 @@
       <div class="menu-options">
         <p>ENTRIES</p>
         <p>DERBY</p>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        <%= link_to "Log out", destroy_user_session_path %>
       </div>
     </div>
   </div>
-  <div class="crowd-img"></div>
+  <div class="crowd-img">
+    <%= render "components/profile_info_cards" %>
+  </div>
 </div>
