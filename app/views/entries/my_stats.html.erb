@@ -2,10 +2,14 @@
   <h1>My Stats</h1>
   <div class="charts">
     <div class="cigarettes-chart">
-      <canvas id="myChart" width="400" height="400" data-cigs="<%= @date_cigs %>"></canvas>
+      <canvas id="cigChart" width="275px" height="240px" data-cigs="<%= @date_cigs %>"></canvas>
+    </div>
+
+    <div class="cigarettes-chart">
+      <canvas id="contextChart" width="275px" height="240px" data-context="<%=  %>"></canvas>
     </div>
   </div>
 
-  <%= javascript_pack_tag 'chart' %>
-
+  <%= javascript_pack_tag 'cigs-chart' %>
+  <%= javascript_pack_tag 'context-chart' %>
 </div>

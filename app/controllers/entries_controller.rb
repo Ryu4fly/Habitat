@@ -35,6 +35,8 @@ class EntriesController < ApplicationController
     @cig_entries = Entry.where('cig_smoked > 0').order(date: :asc)
     @date_cigs = reduce_same_date_entries(@cig_entries)
 
+    # @entries_context = 
+
     authorize @cig_entries
   end
 

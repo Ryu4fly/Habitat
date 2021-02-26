@@ -1,7 +1,7 @@
 import Chart from 'chart.js';
 import moment from 'moment';
 
-const ctx = document.getElementById('myChart');
+const ctx = document.getElementById('cigChart');
 const dataArray = ctx.dataset.cigs;
 const dataJSON = JSON.parse(dataArray);
 const chartData = [];
