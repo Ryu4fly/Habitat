@@ -1,6 +1,7 @@
 class RacesController < ApplicationController
     def index
-        @races = policy_scope(Race).order(created_at: :desc)
+        @races = policy_scope(Race).order(start_time: :asc).where('start_time > ?', Date.today)
+        p @races
         authorize @races
     end
 
@@ -11,11 +12,19 @@ class RacesController < ApplicationController
 
     def new
         @race = Race.new
+        @max_date = Date.today + 1.week
         authorize @race
     end
 
     def create
         @race = Race.new(race_params)
+        authorize @race
+        if @race.save
+            puts "*****************Successfully saved new race!"
+            redirect_to races_path
+        else
+            render :new
+        end
     end
 
 

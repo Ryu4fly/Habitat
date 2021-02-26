@@ -5,3 +5,18 @@ button {
   padding: 8px;
   border-radius: 4px;
 }
+
+.link-btn {
+  background-color: $light-red;
+  color: $light-gray;
+  border-style: none;
+  padding: 8px;
+  border-radius: 4px;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.link-btn:hover {
+  color: $light-gray;
+  text-decoration: none;
+}

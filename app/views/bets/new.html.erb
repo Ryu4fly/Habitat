@@ -1,1 +1,6 @@
 <h1>This is where a user will make a new bet</h1>
+<%= simple_form_for [@race, @bet] do |f| %>
+  <%= f.input :amount, label: "Bet amount", input_html: {min: 10, max: 1000, value: 10, step: 10} %>
+  <%= f.input :lane_id, label: "Which smoker do you want to bet on?", collection: @race.lanes.map {|lane| [lane.user.username, lane.id]} %>
+  <%= f.submit "Make a bet", class: 'link-btn'%>
+<% end %>

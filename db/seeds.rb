@@ -1,3 +1,4 @@
+require File.dirname(__FILE__) + '/fake_user_names'
 
 puts "Destroying all data 📀 ..."
 Win.destroy_all
@@ -10,11 +11,11 @@ Race.destroy_all
 User.destroy_all
 
 puts "Generating new users..."
-10.times do
+20.times do
   user = User.new
   user.email = Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
   user.password = '123456'
-  user.username = Faker::Internet.unique.username # This will return a unique name every time it is called
+  user.username = random_username
   habit = Habit.new
   habit.avg_cig = rand(1..200)
   habit.cost_a_pack = rand(1.00..20.00).round(2)

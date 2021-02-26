@@ -14,6 +14,16 @@ class ApplicationController < ActionController::Base
   #   flash[:alert] = "You are not authorized to perform this action."
   #   redirect_to(root_path)
   # end
+  helper_method :name_race
+
+  def name_race(race)
+      race_name = ''
+      race.users.each_with_index do |user, index|
+        race_name << user.username
+        race_name << ' vs. ' if index < race.users.length - 1
+      end
+    return race_name
+  end
 
   private
 

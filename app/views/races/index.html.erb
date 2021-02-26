@@ -1,1 +1,15 @@
 <h1>This page will allow users to choose from races to join</h1>
+<div class="custom-container">
+  <% @races.each do |race| %>
+    <div class="custom-card">
+      <div class="custom-card-title">
+        <%= name_race(race) %>
+      </div>
+      <div class="race-index-card-starttime">
+        Start Time: <%= Race::MONTHS[race.start_time.month]%>, <%= race.start_time.day  %>
+      </div>
+      <%= link_to  "Bet on this race", new_race_bet_path(race), class: "link-btn" %>
+      <%= link_to  "Join this race", race_path(race), class: "link-btn" %>
+    </div>
+  <% end %>
+</div>
