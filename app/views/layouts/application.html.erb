@@ -17,10 +17,5 @@
     <%= render 'shared/flashes' %>
 
     <%= yield %>
-
-    <% if user_signed_in? && ((params[:controller] == 'pages' && params[:action] == 'profile') || (params[:controller] == 'entries' && params[:action] == 'index'))%>
-      <%= render 'shared/navbar' %>
-    <% end %>
-
   </body>
 </html>
