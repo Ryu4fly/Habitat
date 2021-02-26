@@ -1,0 +1,19 @@
+.custom-container {
+  display: flex;
+  padding: 32px;
+  flex-wrap: wrap;
+}
+
+.custom-card {
+  background-color: $light-purple;
+  margin: 32px;
+  padding: 32px;
+  max-width: 280px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.custom-card-title {
+  font-size: 18px;
+  font-weight: 700;
+}

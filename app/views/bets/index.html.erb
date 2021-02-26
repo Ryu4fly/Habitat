@@ -1,1 +1,13 @@
-<h1>This is where a user can see all bets for a particular race</h1>
+<h1>These are your bets</h1>
+<div class="custom-container">
+  <% @bets.each do |bet|%>
+    <div class="custom-card">
+      <%= name_race(bet.lane.race) %>
+      <div class="bets-index-card-details">
+        <div>Amount: $<%= bet.amount %></div>
+        <div>Start Time: <%= Race::MONTHS[bet.race.start_time.month]%>, <%= bet.race.start_time.day %></div>
+        <div>End Time: <%= Race::MONTHS[bet.race.end_time.month]%>, <%= bet.race.end_time.day %></div>
+      </div>
+    </div>
+  <% end %>
+</div>

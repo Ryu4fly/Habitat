@@ -1,1 +1,7 @@
-<h1>This page will allow users to create a new race and set it public or private</h1>
+<h1>Create A New Race</h1>
+<%= simple_form_for @race do |f| %>
+  <%= f.label :start_time, "When do you want the race to start?" %>
+  <%= f.date_field :start_time, min: Date.today + 1.day, max: @max_date %>
+  <%= f.input :duration, label: "How many days will the race last?", input_html: {min: 5, max: 30, value: 5} %>
+<% end %>
+<%= javascript_pack_tag 'new-race' %>
