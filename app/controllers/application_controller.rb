@@ -15,6 +15,9 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
   helper_method :name_race
+  helper_method :race_ongoing?
+  helper_method :race_finished?
+  helper_method :race_not_started?
 
   def name_race(race)
       race_name = ''
@@ -24,6 +27,20 @@ class ApplicationController < ActionController::Base
       end
     return race_name
   end
+
+  def race_not_started?(race)
+    return true if Time.now < race.start_time
+  end
+
+  def race_ongoing?(race)
+    return true if Time.now <= race.end_time && Time.now >= race.start_time
+  end
+
+  def race_finished?(race)
+    return true if Time.now > race.end_time
+  end
+
+
 
   private
 
