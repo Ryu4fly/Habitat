@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
   helper_method :race_ongoing?
   helper_method :race_finished?
   helper_method :race_not_started?
+  helper_method :user_is_racer?
 
   def name_race(race)
       race_name = ''
@@ -38,6 +39,13 @@ class ApplicationController < ActionController::Base
 
   def race_finished?(race)
     return true if Time.now > race.end_time
+  end
+
+  def user_is_racer?(race)
+    race.lanes.each do |lane|
+      return true if lane.user == current_user
+    end
+    return false
   end
 
 

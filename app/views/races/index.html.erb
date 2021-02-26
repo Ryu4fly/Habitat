@@ -14,7 +14,12 @@
           </div>
           <% if race_not_started?(race) %>
             <%= link_to  "Bet on this race", new_race_bet_path(race), class: "link-btn" %>
-            <%= link_to  "Join this race", race_path(race), class: "link-btn" %>
+            <% if user_is_racer?(race) %>
+              <div>You are participating in this race! Get ready!</div>
+              <%= link_to  "View this race", race_path(race), class: "link-btn" %>
+            <% else %>
+              <%= link_to  "Join this race", race_path(race), class: "link-btn" %>
+            <% end %>
           <% end %>
         </div>
       <% end %>

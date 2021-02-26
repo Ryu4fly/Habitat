@@ -7,4 +7,8 @@
 <% end %>
 <% if race_not_started?(@race) %>
   <h1>This race hasn't started yet</h1>
+  <% unless @racer %>
+    <button id="race-join-btn">Join this race 🏇</button>
+  <% end %>
 <% end %>
+<%= javascript_pack_tag "race-show" %>

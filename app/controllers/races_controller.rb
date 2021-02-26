@@ -6,6 +6,7 @@ class RacesController < ApplicationController
 
     def show
         @race = Race.find(params[:id])
+        @racer = user_is_racer?(@race)
         authorize @race
     end
 
@@ -19,13 +20,17 @@ class RacesController < ApplicationController
         @race = Race.new(race_params)
         authorize @race
         if @race.save
-            puts "*****************Successfully saved new race!"
             redirect_to races_path
         else
             render :new
         end
     end
 
+    def update
+        @race = Race.find(params[:id])
+        authorize @race
+        join_race(@race) if params[:join_race]
+    end
 
     def destroy
         @race = Race.find(params[:id])
@@ -41,4 +46,12 @@ class RacesController < ApplicationController
     def race_params
         params.require(:race).permit(:start_time, :duration, :public)
     end
+
+    def join_race(race)
+        @lane = Lane.new
+        @lane.user = current_user
+        @lane.race = race
+        @lane.save
+    end
+
 end

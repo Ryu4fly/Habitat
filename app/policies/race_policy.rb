@@ -17,6 +17,10 @@ class RacePolicy < ApplicationPolicy
       return true if user
   end
 
+  def update?
+    return true if user
+  end
+
   def destroy?
     return true if user
   end

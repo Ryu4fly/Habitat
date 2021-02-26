@@ -4,16 +4,13 @@ class HabitsController < ApplicationController
         authorize @habit
     end
     def create
-        puts "*******************************************"
-        puts params
         @habit = Habit.new(habit_params)
         @habit.user = current_user
         authorize @habit
-        p @habit
         if @habit.save
             redirect_to profile_path(current_user)
         else
-            puts @habit.save!
+            render :new
         end
     end
 
