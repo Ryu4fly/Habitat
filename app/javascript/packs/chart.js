@@ -1,13 +1,27 @@
 import Chart from 'chart.js';
+import moment from 'moment';
 
 const ctx = document.getElementById('myChart');
+const dataArray = ctx.dataset.cigs;
+const dataJSON = JSON.parse(dataArray);
+const chartData = [];
+
+dataJSON.forEach(elem => {
+  const obj = {
+    x: moment(elem[0]),
+    y: elem[1]
+  };
+  chartData.push(obj);
+});
+
 const myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: chartData.map(obj=> obj.x),
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: '# of Cigarettes Smoked',
+            data: chartData,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -29,9 +43,13 @@ const myChart = new Chart(ctx, {
     },
     options: {
         scales: {
-            yAxes: [{
+            xAxes: [{
                 ticks: {
                     beginAtZero: true
+                },
+                type : 'time',
+                time: {
+                  unit: 'month'
                 }
             }]
         }

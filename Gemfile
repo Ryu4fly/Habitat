@@ -32,7 +32,7 @@ gem 'faker'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
-gem 'chart-js-rails'
+
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
