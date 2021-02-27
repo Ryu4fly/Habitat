@@ -1,1 +1,14 @@
 <h1>This page will show the current race</h1>
+<% if race_finished?(@race) %>
+  <h1>This race has ended</h1>
+<% end %>
+<% if race_ongoing?(@race) %>
+  <h1>This race is ongoing</h1>
+<% end %>
+<% if race_not_started?(@race) %>
+  <h1>This race hasn't started yet</h1>
+  <% unless @racer %>
+    <button id="race-join-btn">Join this race 🏇</button>
+  <% end %>
+<% end %>
+<%= javascript_pack_tag "race-show" %>
