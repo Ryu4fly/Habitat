@@ -21,6 +21,7 @@ ActiveStorage.start()
 // External imports
 import "bootstrap";
 import Iconify from '@iconify/iconify';
+import { cardsNavigation } from '../components/profile-card';
 
 
 // Internal imports, e.g:
@@ -30,4 +31,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   Iconify.scanDOM();
+  cardsNavigation();
 });
