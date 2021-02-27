@@ -1,9 +1,38 @@
 <div class="tabs-container">
+
+  <div class="button-tabs" data-target-tabs>
+    <button data-tab-target="#cig" class="tab cig-tab">
+      <span class="iconify cig-icon icon" data-icon="cil:smoke-slash" data-inline="false"></span>
+    </button>
+    <button data-tab-target="#saved" class="tab saved-tab" style="background-color: #2D78B8;">
+      <span class="iconify money-icon icon" data-icon="dashicons:money-alt" data-inline="false"></span>
+    </button>
+  </div>
+
+  <div class="tab-content">
+    <div id="cig" data-tab-content class="active" style="background-color:#F97676; border-radius: 12px;">
+      <p>Cigarettes Not Smoked</p>
+      <p class="total-amount">25 cig.</p>
+    </div>
+
+    <div id="saved" data-tab-content style="background-color: #2D78B8; border-radius: 12px;">
+      <p>Money Saved</p>
+      <p class="total-amount">￥420.00</p>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+<!-- <div class="tabs-container">
   <div data-target-tabs class="tabs-navigation">
     <ul class="tabs">
       <li data-tab-target="#saved" class="tab">Saved</li>
       <li data-tab-target="#cigs" class="tab">Cig</li>
-      <li data-tab-target="#stats" class="tab">Stats</li>
     </ul>
 
   <div class="tab-content">
@@ -18,10 +47,6 @@
       <span class="iconify money-icon icon" data-icon="dashicons:money-alt" data-inline="false"></span>
       <p class="total-amount">￥420.00</p>
     </div>
-
-    <div id="stats" data-tab-content>
-      <span class="iconify chart-icon icon" data-icon="si-glyph:column-increase" data-inline="false"></span>
-      <p>This is your stats</p>
-    </div>
   </div>
 </div>
+ -->
