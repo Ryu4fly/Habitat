@@ -2,8 +2,7 @@ class EntriesController < ApplicationController
   before_action :find_entry, only: [:show, :destroy]
 
   def index
-    @entries = policy_scope(Entry).order(created_at: :desc)
-    # @entries = policy_scope(Entry)
+    @entries = policy_scope(Entry).order(date: :desc)
   end
 
   def show
@@ -31,6 +30,20 @@ class EntriesController < ApplicationController
     redirect_to entries_path
   end
 
+  def my_stats
+    @cig_entries = Entry.where('cig_smoked > 0').order(date: :asc)
+    @date_cigs = reduce_same_date_entries(@cig_entries)
+
+    @entries = Entry.all
+    @feelings = get_feelings(@entries)
+    @context  = get_context(@entries)
+
+    @feelings_count = get_count(@feelings)
+    @context_count = get_count(@context)
+    
+    authorize @cig_entries
+  end
+
   private
 
   def find_entry
@@ -40,5 +53,37 @@ class EntriesController < ApplicationController
 
   def entry_params
     params.require(:entry).permit(:date, :feeling, :craving, :cig_smoked, :context)
+  end
+
+  def reduce_same_date_entries(entries)
+    date_cig = []
+    entries.each do |entry|
+      dates = date_cig.map { |ary| ary[0] }
+      if date_cig.empty? || !dates.include?(entry.date.to_s)
+        cig_entry = [
+          entry.date.to_s,
+          entry.cig_smoked
+        ]
+        date_cig << cig_entry
+      else
+        existing_date = date_cig.select { |ary| ary[0] == entry.date.to_s }
+        existing_date[0][1] += entry.cig_smoked
+      end
+    end
+    date_cig
+  end
+
+  def get_feelings(entries)
+    entries.map { |entry| entry.feeling }
+  end
+
+  def get_context(entries)
+    entries.map { |entry| entry.context }
+  end
+
+  def get_count(array)
+    counts = Hash.new(0)
+    array.each { |elem| counts[elem] += 1 }
+    counts
   end
 end
