@@ -42,7 +42,7 @@
     justify-content: space-around;
     margin-top: 50px;
     position: relative;
-    bottom: -200px;
+    // bottom: -200px;
     p {
       color: white;
     }
@@ -52,6 +52,11 @@
       font-weight: 500;
 
     }
+  }
+
+  .tabs {
+    margin-top: 70px;
+    padding: 0 17px;
   }
 
   .open-sea {
