@@ -1,4 +1,16 @@
-<h1>This is where a user will make a new bet</h1>
+<div class="race-info">
+  <h2>Participants in this race</h2>
+  <div class="racer-info-card-container">
+    <% @race.lanes.each do |lane| %>
+      <div class="racer-info-card">
+        <div class="racer-title"><%= lane.user.username %></div>
+        <div class="racer-info">
+          <div>Cigarettes per day: <%= avg_cig(lane.user) %></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 <%= simple_form_for [@race, @bet] do |f| %>
   <%= f.input :amount, label: "Bet amount", input_html: {min: 10, max: 1000, value: 10, step: 10} %>
   <%= f.input :lane_id, label: "Which smoker do you want to bet on?", collection: @race.lanes.map {|lane| [lane.user.username, lane.id]} %>

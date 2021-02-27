@@ -1,0 +1,17 @@
+.racer-info-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.racer-info-card {
+  background-color: $light-purple;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 4px;
+  width: 280px;
+}
+
+.racer-info-card .racer-title {
+  font-size: 22px;
+}
