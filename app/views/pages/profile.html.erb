@@ -1,21 +1,26 @@
 <div class="profile-container">
-  <div class="open-sea">
-    <div class="profile-scoreboard">
-      <h5>The Nicotine Derby</h5>
-      <div class="score-stats">
-        <p id="board-title">Scoreboard</p>
-      </div>
+
+  <div class="user-welcome">
+    <div class="avatar-img">
+      <%= image_tag "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", class: "avatar-large"%>
     </div>
-    <div class="profile-menu">
-      <p id="menu-title">MENU</p>
-      <div class="menu-options">
-        <a href="#">ENTRIES</a>
-        <a id="derby" href="#">DERBY</a>
-        <%= link_to "LOGOUT", destroy_user_session_path %>
-      </div>
+    <div class="text">
+      <h3>Hello <%= current_user.username.capitalize %></h3>
+      <p>How are you feeling today?</p>	
     </div>
   </div>
-  <div class="crowd-img">
+  <div class="new-entry">
+    <p><%= link_to "Log a new entry", new_entry_path, id: 'new-entry' %></p>
+  </div>
+
+  <div>
     <%= render "components/profile_info_cards" %>
+  </div>
+
+  <div class="menu">
+      <p><%= link_to "DIARY", entries_path, id:'diary' %></p>
+      <p><%= link_to "RACES", races_path, id:'races' %></p>
+      <p><%= link_to "STATS", my_stats_path, id:'stats' %></p>
+      <p><%= link_to "LOGOUT", destroy_user_session_path, id:'logout' %></p>
   </div>
 </div>

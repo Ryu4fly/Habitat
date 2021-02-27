@@ -1,12 +1,60 @@
 .profile-container {
-  height: 100vh;
-  width: 100vw;
-  background-color: #5E4319;
+  margin: 5%;
+  background-color: transparent;
+  // border-radius: 10px;
+
+  .user-welcome { 
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .avatar-img {
+    padding: 8px;
+  }
+
+  .text {
+    margin-top: 1.4rem;
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0;
+    }
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+
+  .new-entry {
+    text-align: center;
+    margin: 9% 0;
+    #new-entry {
+      background-color: #FFEE59;
+      font-size: 1rem;
+      text-decoration: none;
+      color: black;
+      padding: 9px;
+      border-radius: 20px;
+    }
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    position: relative;
+    bottom: -200px;
+    p {
+      color: white;
+    }
+    #diary, #races, #stats, #logout {
+      color: white;
+      font-size: 1rem;
+      font-weight: 500;
+
+    }
+  }
 
   .open-sea {
-    background-image: asset-url("opensea");
-    background-size: cover;
-
     height: 50vh;
     width: 100vw;
     display: flex;
