@@ -24,18 +24,6 @@ puts "Generating new users..."
   puts "new user ✨#{user.id} - #{user.email} \n habit 👉 #{user.habit.avg_cig} cigs a day at #{user.habit.cost_a_pack}$ per pack."
 end
 
-20.times do
-  entry = Entry.new
-  date = DateTime.new(rand(1985..1997), rand(1..12), rand(1..24), rand(1..12), rand(1..35), rand(1..45))
-  entry.date = date
-  entry.feeling = Entry::FEELINGS.sample
-  entry.user = User.all.sample
-  entry.craving = rand(1..10)
-  entry.cig_smoked = rand(0..10)
-  entry.save
-  puts "New entry: #{entry.date}, feeling - #{entry.feeling}, craving - #{entry.craving}, cig smoked: #{entry.cig_smoked}"
-end
-
 def days_in_month(month)
   if [1,3,5, 7, 8, 10, 12].include?(month)
     return rand(1..31)
@@ -47,6 +35,20 @@ def days_in_month(month)
     puts "ERROR creating race time 😭"
     return false
   end
+end
+
+2000.times do
+  entry = Entry.new
+  year = Time.now.year
+  date = DateTime.new(year, rand(1..Time.now.month), rand(1..27), rand(1..12), rand(1..35), rand(1..45))
+  entry.date = date
+  entry.feeling = Entry::FEELINGS.sample
+  entry.context = Entry::CONTEXT.sample
+  entry.user = User.all.sample
+  entry.craving = rand(1..10)
+  entry.cig_smoked = rand(0..10)
+  entry.save
+  puts "New entry: #{entry.date}, feeling - #{entry.feeling}, craving - #{entry.craving}, cig smoked: #{entry.cig_smoked}"
 end
 
 def add_losses_and_wins_to_old_races(race)
@@ -96,7 +98,7 @@ end
 
 def add_racers_to_race(race)
   used_users = []
-  [3, 4].sample.times do
+  rand(1..5).times do
     lane = Lane.new
     user = User.find(User.pluck(:id).shuffle.first)
     while used_users.include?(user) do

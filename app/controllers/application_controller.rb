@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
   helper_method :race_not_started?
   helper_method :user_is_racer?
   helper_method :race_full?
+  helper_method :avg_cig
 
   def name_race(race)
       race_name = ''
@@ -53,7 +54,15 @@ class ApplicationController < ActionController::Base
       return true if race.lanes.length > 5
   end
 
-
+  def avg_cig(user)
+    entries = user.entries.all.order(date: :asc)
+    first_date = entries.first.date
+    cigs_since_joining = 0
+    user.entries.each do |entry|
+      cigs_since_joining += entry.cig_smoked
+    end
+    cigs_since_joining.to_f / (Date.today - first_date).to_f
+  end
 
   private
 
