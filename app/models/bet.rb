@@ -4,6 +4,7 @@ class Bet < ApplicationRecord
 
   validates :amount, presence: true
   validates :lane_id, presence: true
+  validates :user, presence: true
 
   has_one :race, through: :lane
 end

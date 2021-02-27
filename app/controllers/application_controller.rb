@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
   helper_method :race_finished?
   helper_method :race_not_started?
   helper_method :user_is_racer?
+  helper_method :race_full?
 
   def name_race(race)
       race_name = ''
@@ -46,6 +47,10 @@ class ApplicationController < ActionController::Base
       return true if lane.user == current_user
     end
     return false
+  end
+
+  def race_full?(race)
+      return true if race.lanes.length > 5
   end
 
 
