@@ -10,5 +10,14 @@
   <% unless @racer %>
     <button id="race-join-btn">Join this race 🏇</button>
   <% end %>
+  <div class="race-current_participants">
+    <h3>Racers</h3>
+    <div>
+      <% @lanes.each do |lane| %>
+        <%= lane.user.username %>
+        Odds: 1/100
+      <% end %>
+    </div>
+  </div>
 <% end %>
 <%= javascript_pack_tag "race-show" %>

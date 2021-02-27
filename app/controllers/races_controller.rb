@@ -7,6 +7,7 @@ class RacesController < ApplicationController
     def show
         @race = Race.find(params[:id])
         @racer = user_is_racer?(@race)
+        @lanes = @race.lanes
         authorize @race
     end
 
