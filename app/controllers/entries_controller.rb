@@ -3,7 +3,6 @@ class EntriesController < ApplicationController
 
   def index
     @entries = policy_scope(Entry).order(date: :desc)
-    # @entries = policy_scope(Entry)
   end
 
   def show
@@ -35,8 +34,13 @@ class EntriesController < ApplicationController
     @cig_entries = Entry.where('cig_smoked > 0').order(date: :asc)
     @date_cigs = reduce_same_date_entries(@cig_entries)
 
-    # @entries_context = 
+    @entries = Entry.all
+    @feelings = get_feelings(@entries)
+    @context  = get_context(@entries)
 
+    @feelings_count = get_count(@feelings)
+    @context_count = get_count(@context)
+    
     authorize @cig_entries
   end
 
@@ -67,5 +71,19 @@ class EntriesController < ApplicationController
       end
     end
     date_cig
+  end
+
+  def get_feelings(entries)
+    entries.map { |entry| entry.feeling }
+  end
+
+  def get_context(entries)
+    entries.map { |entry| entry.context }
+  end
+
+  def get_count(array)
+    counts = Hash.new(0)
+    array.each { |elem| counts[elem] += 1 }
+    counts
   end
 end

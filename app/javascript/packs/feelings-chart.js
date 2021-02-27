@@ -1,18 +1,18 @@
 import Chart from 'chart.js';
 import moment from 'moment';
 
-const ctx = document.getElementById('contextChart');
-const dataArray = ctx.dataset.context;
-const contextObj = JSON.parse(dataArray);
+const ctx = document.getElementById('feelingsChart');
+const dataArray = ctx.dataset.feelings;
+const feelingsObj = JSON.parse(dataArray);
 
 
 const myChart = new Chart(ctx, {
-    type: 'pie',
+    type: 'doughnut',
     data: {
-        labels: Object.keys(contextObj),
+        labels: Object.keys(feelingsObj),
         datasets: [{
             label: '# of Cigarettes Smoked',
-            data: Object.values(contextObj),
+            data: Object.values(feelingsObj),
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

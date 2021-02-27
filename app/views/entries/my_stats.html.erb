@@ -6,10 +6,15 @@
     </div>
 
     <div class="cigarettes-chart">
-      <canvas id="contextChart" width="275px" height="240px" data-context="<%=  %>"></canvas>
+      <canvas id="feelingsChart" width="275px" height="240px" data-feelings="<%= @feelings_count.to_json %>"></canvas>
+    </div>
+
+    <div class="cigarettes-chart">
+      <canvas id="contextChart" width="275px" height="240px" data-context="<%= @context_count.to_json %>"></canvas>
     </div>
   </div>
 
   <%= javascript_pack_tag 'cigs-chart' %>
   <%= javascript_pack_tag 'context-chart' %>
+  <%= javascript_pack_tag 'feelings-chart' %>
 </div>
