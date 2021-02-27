@@ -10,6 +10,23 @@ class BetsController < ApplicationController
     def new
       @bet = Bet.new
       @race = Race.find(params[:race_id])
+      @average_cigs = []
+      @race.lanes.each do |lane|
+        @average_cigs << Hash[lane.user.username, {avg_cig: avg_cig(lane.user), odds: nil}]
+      end
+      total = 0
+      @average_cigs.each do |user|
+        user.each do |elem|
+          total += user[elem[0]][:avg_cig]
+        end
+      end
+      @average_cigs.each do |user|
+        user.each do |elem|
+          user[elem[0]][:odds] = (total / user[elem[0]][:avg_cig]).to_r.rationalize
+        end
+      end
+      puts "❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️"
+      p @average_cigs
       authorize @bet
     end
 

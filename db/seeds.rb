@@ -24,6 +24,17 @@ puts "Generating new users..."
   puts "new user ✨#{user.id} - #{user.email} \n habit 👉 #{user.habit.avg_cig} cigs a day at #{user.habit.cost_a_pack}$ per pack."
 end
 
+ryugi = User.new
+ryugi.email = 'ryugi@ryugi.edu'
+ryugi.password = '123456'
+ryugi.username = 'ryugi1973'
+ryugishabit = Habit.new
+ryugishabit.avg_cig = rand(1..200)
+ryugishabit.cost_a_pack = rand(1.00..20.00).round(2)
+ryugi.habit = ryugishabit
+ryugi.save
+
+
 def days_in_month(month)
   if [1,3,5, 7, 8, 10, 12].include?(month)
     return rand(1..31)
@@ -46,7 +57,7 @@ end
   entry.context = Entry::CONTEXT.sample
   entry.user = User.all.sample
   entry.craving = rand(1..10)
-  entry.cig_smoked = rand(0..10)
+  entry.cig_smoked = rand(6..12)
   entry.save
   puts "New entry: #{entry.date}, feeling - #{entry.feeling}, craving - #{entry.craving}, cig smoked: #{entry.cig_smoked}"
 end
