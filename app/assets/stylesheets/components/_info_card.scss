@@ -57,8 +57,8 @@
     height: 30vh;
     margin-top: -20px;
     display: grid;
-    grid-template-columns: repeat(5,1fr);
-    grid-template-rows: 20px 40px repeat(3, 1fr);
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3, 1fr);
 
     p {
       grid-column: 2/5;
@@ -69,8 +69,18 @@
       font-weight: bold;
     }
 
+    .info-header {
+      grid-column: 1/5;
+      grid-row: 1/2;
+    }
+
     .total-amount {
-      grid-row: 4/5;
+      grid-column: 2/4;
+      grid-row: 2/3;
+      align-self: start;
+      margin-left: 20%;
+      font-size: 45px;
+
     }
 
   }
