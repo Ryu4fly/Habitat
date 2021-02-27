@@ -24,11 +24,12 @@ puts "Generating new users..."
   puts "new user ✨#{user.id} - #{user.email} \n habit 👉 #{user.habit.avg_cig} cigs a day at #{user.habit.cost_a_pack}$ per pack."
 end
 
-20.times do
+1000.times do
   entry = Entry.new
-  date = DateTime.new(rand(1985..1997), rand(1..12), rand(1..24), rand(1..12), rand(1..35), rand(1..45))
+  date = DateTime.new(rand(2020..2021), rand(1..12), rand(1..24), rand(1..12), rand(1..35), rand(1..45))
   entry.date = date
   entry.feeling = Entry::FEELINGS.sample
+  entry.context = Entry::CONTEXT.sample
   entry.user = User.all.sample
   entry.craving = rand(1..10)
   entry.cig_smoked = rand(0..10)
@@ -96,7 +97,7 @@ end
 
 def add_racers_to_race(race)
   used_users = []
-  [3, 4].sample.times do
+  rand(1..5).times do
     lane = Lane.new
     user = User.find(User.pluck(:id).shuffle.first)
     while used_users.include?(user) do
