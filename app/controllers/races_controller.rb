@@ -1,6 +1,6 @@
 class RacesController < ApplicationController
     def index
-        @races = policy_scope(Race).order(start_time: :asc).where('end_time > ?', Date.today)
+        @races = policy_scope(Race).order(start_time: :asc).where('start_time > ?', Time.now).limit(10)
         authorize @races
     end
 

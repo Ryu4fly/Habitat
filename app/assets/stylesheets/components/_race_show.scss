@@ -1,0 +1,22 @@
+.race-show-top {
+  position: fixed;
+  top: 0vh;
+  font-family: 'VT323', monospace;
+  background-image: asset-url('opensea.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+.race-show-bottom {
+  position: fixed;
+  top: 50vh;
+  background-image: asset-url('crowd.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  width: 100vw;
+  z-index: -1;
+}

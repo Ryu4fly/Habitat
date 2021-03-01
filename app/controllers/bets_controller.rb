@@ -26,7 +26,7 @@ class BetsController < ApplicationController
       authorize @bet
 
       if @bet.save
-        redirect_to race_bets_path
+        redirect_to race_dashboard_path
       else
         render :new
       end
