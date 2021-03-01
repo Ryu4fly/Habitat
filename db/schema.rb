@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_043212) do
+ActiveRecord::Schema.define(version: 2021_03_01_104948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2021_02_25_043212) do
     t.bigint "lane_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "gambler_id"
+    t.index ["gambler_id"], name: "index_bets_on_gambler_id"
     t.index ["lane_id"], name: "index_bets_on_lane_id"
     t.index ["user_id"], name: "index_bets_on_user_id"
   end
@@ -85,6 +87,7 @@ ActiveRecord::Schema.define(version: 2021_02_25_043212) do
     t.string "username"
     t.integer "days_smoke_free"
     t.string "preferred_currency"
+    t.integer "balance"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -100,6 +103,7 @@ ActiveRecord::Schema.define(version: 2021_02_25_043212) do
 
   add_foreign_key "bets", "lanes"
   add_foreign_key "bets", "users"
+  add_foreign_key "bets", "users", column: "gambler_id"
   add_foreign_key "entries", "users"
   add_foreign_key "habits", "users"
   add_foreign_key "lanes", "races"

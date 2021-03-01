@@ -42,6 +42,14 @@ class RacesController < ApplicationController
         end
     end
 
+    def race_dashboard
+        @races = Race.includes(:bets)
+        @bets = current_user.bets.order(created_at: :desc)
+        @my_lanes = current_user.lanes.order(created_at: :desc)
+        @balance = current_user.balance
+        authorize @races
+    end
+
     private
 
     def race_params

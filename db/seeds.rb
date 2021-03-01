@@ -11,7 +11,7 @@ Race.destroy_all
 User.destroy_all
 
 puts "Generating new users..."
-20.times do
+30.times do
   user = User.new
   user.email = Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
   user.password = '123456'
@@ -48,7 +48,7 @@ def days_in_month(month)
   end
 end
 
-2000.times do
+1600.times do
   entry = Entry.new
   year = Time.now.year
   date = DateTime.new(year, rand(1..Time.now.month), rand(1..27), rand(1..12), rand(1..35), rand(1..45))
@@ -93,7 +93,7 @@ end
 
 def add_bets_to_lane(lane)
   used_users = []
-  rand(0..4).times do
+  rand(0..15).times do
     user = User.find(User.pluck(:id).shuffle.first)
     while used_users.include?(user) do
       user = User.find(User.pluck(:id).shuffle.first)
@@ -123,7 +123,7 @@ def add_racers_to_race(race)
   end
 end
 
-30.times do
+100.times do
   race = Race.new
   race.duration = rand(5..31)
   race.public = [true, false].sample

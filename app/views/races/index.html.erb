@@ -1,5 +1,4 @@
 <div class="race-index">
-  <h1>This page will allow users to choose from races to join</h1>
   <div class="race-index-btn-container">
     <button id="upcoming-btn">View upcoming races</button>
     <button id="ongoing-btn">View ongoing races</button>
@@ -19,16 +18,24 @@
           End Time: <%= Race::MONTHS[race.end_time.month]%>, <%= race.end_time.day  %>
         </div>
         <% unless race_not_started?(race) %>
+          <br>
+          <br/>
           <%= link_to  "View this race", race_path(race), class: "link-btn" %>
         <% end %>
         <% if race_not_started?(race) %>
+          <br>
+          <br/>
           <%= link_to  "Bet on this race", new_race_bet_path(race), class: "link-btn" %>
           <% if user_is_racer?(race) %>
+            <br>
+            <br/>
             <%= link_to  "View this race", race_path(race), class: "link-btn" %>
           <% else %>
             <% if race_full?(race) %>
               <div>This race is full</div>
             <% else %>
+              <br>
+              <br/>
               <%= link_to  "Join this race", race_path(race), class: "link-btn" %>
             <% end %>
           <% end %>
