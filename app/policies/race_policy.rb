@@ -6,23 +6,27 @@ class RacePolicy < ApplicationPolicy
   end
 
   def index?
-    return true if user
+    true
   end
 
   def show?
-    return true if user
+    true
   end
 
   def create?
-      return true if user
+      true
   end
 
   def update?
-    return true if user
+    true
   end
 
   def destroy?
-    return true if user
+    true
+  end
+
+  def race_dashboard?
+    true
   end
 
 end
