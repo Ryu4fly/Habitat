@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
   helper_method :name_race
+  helper_method :short_name
   helper_method :race_ongoing?
   helper_method :race_finished?
   helper_method :race_not_started?
@@ -30,6 +31,15 @@ class ApplicationController < ActionController::Base
         race_name << ' vs. ' if index < race.users.length - 1
       end
     return race_name
+  end
+
+  def short_name(race)
+    race_name = ''
+    race.users.each_with_index do |user, index|
+      race_name << user.username[0].upcase
+      race_name << ' vs. ' if index < race.users.length - 1
+    end
+    race_name
   end
 
   def race_not_started?(race)
@@ -53,10 +63,6 @@ class ApplicationController < ActionController::Base
 
   def race_full?(race)
       return true if race.lanes.length > 5
-  end
-
-  def race_odds(avg_cigs)
-    
   end
 
   def avg_cig(user)

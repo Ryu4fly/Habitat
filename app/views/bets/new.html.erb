@@ -1,18 +1,31 @@
-<div class="race-info">
-  <h2>Participants in this race</h2>
-  <div class="racer-info-card-container">
-    <% @race.lanes.each do |lane| %>
-      <div class="racer-info-card">
-        <div class="racer-title"><%= lane.user.username %></div>
-        <div class="racer-info">
-          <div>Cigarettes per day: <%= avg_cig(lane.user) %></div>
+<div class="new-bet">
+  <%= simple_form_for [@race, @bet] do |f| %>
+    <div class="new-bet-top">
+      <div class="new-bet-racers-container">
+        The Nicotine Derby
+        <div class="new-bet-racers-info-container thick-border">
+          <div class="new-bet-racer-column">
+            <div class="column-title">Racer</div>
+            <%= f.input :lane_id, label: "Choose a racer", collection: @race.lanes.map {|lane| [lane.user.username, lane.id]}, as: :radio_buttons %>
+          </div>
+          <div class="new-bet-stats-column">
+            <div class="column-title">Stats</div>
+          </div>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+    <div class="new-bet-bottom">
+      <div class="new-bet-timer-container thick-border">
+        <div class="timer-title">RACE BEGINS IN</div>
+        <div class="new-bet-timer"><%= (@race.start_time - Time.now).to_i %></div>
+      </div>
+      <div class="bet-placer thick-border">
+        <div class="current-pool">Current pool: $<%= number_with_delimiter(@pool) %></div>
+        <div style="display: flex;"><%= image_tag 'dollar', height: 40, width: 29 %><%= f.input :amount, label: false, input_html: {min: 10, max: 1000, value: 10, step: 10} %></div>
+        <%= f.submit "Bet", class: 'race-btn'%>
+      </div>
+    </div>
+  <% end %>
+  <div class="hidden-info" data-hidden-info="<%=@average_cigs.to_json %>" hidden></div>
+  <%= javascript_pack_tag 'new-bets' %>
 </div>
-<%= simple_form_for [@race, @bet] do |f| %>
-  <%= f.input :amount, label: "Bet amount", input_html: {min: 10, max: 1000, value: 10, step: 10} %>
-  <%= f.input :lane_id, label: "Which smoker do you want to bet on?", collection: @race.lanes.map {|lane| [lane.user.username, lane.id]} %>
-  <%= f.submit "Make a bet", class: 'link-btn'%>
-<% end %>

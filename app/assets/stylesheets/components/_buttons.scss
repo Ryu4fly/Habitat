@@ -11,6 +11,7 @@ button {
   color: $light-gray;
   border-style: none;
   padding: 8px;
+  margin: 16px;
   border-radius: 4px;
   transition: 0.3s;
   white-space: nowrap;
@@ -19,4 +20,13 @@ button {
 .link-btn:hover {
   color: $light-gray;
   text-decoration: none;
+}
+
+.race-btn {
+  font-family: 'VT323', monospace;
+  border-radius: 20px;
+  min-width: 100px;
+  padding: 8px;
+  background-color: $dark-green;
+  white-space: nowrap;
 }

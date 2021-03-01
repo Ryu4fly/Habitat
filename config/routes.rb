@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get "profile", to: "pages#profile", as: :profile
   get "stats", to: "entries#my_stats", as: :my_stats
+  get "race-dashboard", to: "races#race_dashboard", as: :race_dashboard
 
   resources :entries, only: [:index, :show, :new, :create, :destroy]
   resources :habits, only: [:new, :create]

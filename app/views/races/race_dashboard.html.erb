@@ -1,0 +1,80 @@
+<div class="race-dashboard-container">
+  <div class="dashboard-box thick-border">
+    <div class="small-title">Nicotine Derby</div>
+    YOUR BALANCE: $<%= @balance %>
+    <div class="open-races thick-border">
+      <div class="smaller-title">Open Races</div>
+      <div class="flex-direction-row center">
+        <div class="flex-direction-column">
+          <div class="box-column underline">Betting on</div>
+          <div class="race-list">
+            <% betting_on_open = 0 %>
+            <% @bets.each do |bet| %>
+              <% if race_ongoing?(bet.race) && betting_on_open < 4 %>
+                <% betting_on_open += 1%>
+                <%= link_to race_path(bet.race) do%>
+                  <div class="race-list-item"><%= betting_on_open %>.  <%= short_name(bet.race) %> </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="flex-direction-column">
+          <div class="box-column underline">Racing in</div>
+          <div class="race-list">
+            <% racing_in_open = 0 %>
+            <% @my_lanes.each do |lane| %>
+              <% if race_ongoing?(lane.race) && racing_in_open < 4 %>
+                <% racing_in_open += 1%>
+                <%= link_to race_path(lane.race) do%>
+                  <div class="race-list-item"><%= racing_in_open %>.  <%= short_name(lane.race) %> </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class=""></div>
+      </div>
+    </div>
+    <div class="completed-races thick-border">
+      <div class="smaller-title">Completed Races</div>
+      <div class="flex-direction-row center">
+        <div class="flex-direction-column">
+          <div class="box-column underline">Bet on</div>
+          <div class="race-list">
+            <% betting_on_completed = 0 %>
+            <% @bets.each do |bet| %>
+              <% if race_finished?(bet.race) && betting_on_completed < 4 %>
+                <% betting_on_completed += 1%>
+                <%= link_to race_path(bet.race) do%>
+                  <div class="race-list-item"><%= betting_on_completed %>.  <%= short_name(bet.race) %> </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="flex-direction-column">
+          <div class="box-column underline">Raced in</div>
+          <div class="race-list">
+            <% racing_in_completed = 0 %>
+            <% @my_lanes.each do |lane| %>
+              <% if race_finished?(lane.race) && racing_in_completed < 4%>
+                <% racing_in_completed += 1 %>
+                <%= link_to race_path(lane.race) do%>
+                  <div class="race-list-item"><%= racing_in_completed %>. <%= short_name(lane.race) %></div>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class=""></div>
+      </div>
+    </div>
+    <div class="menu-box thick-border">
+      <div class="smaller-title">Menu</div>
+      <%= link_to  "JOIN A RACE", races_path, class: 'race-btn' %>
+      <%= link_to  "REDEEM YOURSELF", races_path, class: 'race-btn' %>
+      <%= link_to  "RETURN TO PROFILE", profile_path, class: 'race-btn'%>
+    </div>
+  </div>
+</div>
