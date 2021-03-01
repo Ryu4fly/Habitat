@@ -1,28 +1,30 @@
 .new-bet {
   font-family: 'VT323', monospace;
+  input {
+    font-family: 'VT323', monospace;
+    font-size: 22px;
+  }
 }
-
 .new-bet-top {
+  position: fixed;
+  top: 0vh;
   font-family: 'VT323', monospace;
   background-image: asset-url('opensea.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 50vh;
-  padding: 24px;
+  width: 100vw;
+  z-index: -1;
 }
 .new-bet-bottom {
+  position: fixed;
+  top: 50vh;
   background-image: asset-url('crowd.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 50vh;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  input {
-    font-family: 'VT323', monospace;
-    font-size: 22px;
-  }
+  width: 100vw;
+  z-index: -1;
 }
 .racer-info-card-container {
   display: flex;
@@ -34,6 +36,7 @@
   background-color: $dark-green;
   border-radius: 8px;
   padding: 8px;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,22 +57,10 @@
 .new-bet-racers-info-container {
   background-color: $race-gray;
   display: flex;
-  width: 100%;
   max-height: 35vh;
+  width: 100%;
   overflow-y: scroll;
   justify-content: space-evenly;
-}
-
-.racer-info-card {
-  background-color: $light-purple;
-  margin: 16px;
-  padding: 16px;
-  border-radius: 4px;
-  width: 280px;
-}
-
-.racer-info-card .racer-title {
-  font-size: 22px;
 }
 
 .new-bet .numeric {
@@ -86,6 +77,7 @@
 
 .new-bet-timer-container {
   background-color: $race-gray;
+  margin-bottom: 16px;
   .timer-title {
     width: 100%;
     text-align: center;
@@ -94,7 +86,6 @@
 
 .new-bet-timer {
   font-size: 32px;
-  width: 100%;
   text-align: center;
 }
 
@@ -105,4 +96,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+}
+.stuff-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  padding: 32px;
+  flex-direction: column;
+  justify-content: space-around;
 }

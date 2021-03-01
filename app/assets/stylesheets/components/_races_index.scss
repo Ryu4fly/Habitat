@@ -1,29 +1,44 @@
-.race-index-btn-container {
+.race-index {
+  font-family: 'VT323', monospace;
+}
+
+.race-index-top {
+  background-image: asset-url('opensea.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+}
+
+.race-index-bottom {
+  background-image: asset-url('crowd.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+}
+
+.race-index-info-holder {
+  position: fixed;
+  top: 0px;
+  height: 100vh;
+  padding: 32px;
+  overflow-y: scroll;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  button {
-    margin: 32px;
-  }
 }
 
-.you-are-in-this-race {
-  display: flex;
-  background-color: $light-red;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+.race-index-card-title {
+  font-size: 22px;
+}
+
+.race-index-custom-card {
+  background-color: $race-gray;
+  flex-grow: 1;
   padding: 16px;
-  justify-content: center;
+  margin: 8px;
+  border-radius: 8px;
+  min-height: 260px;
   align-items: center;
-  position: absolute;
-  top: -50px;
-  left: 175px;
-  opacity: 1;
-}
-
-.race-index .custom-card {
-  position: relative;
-  transition: 1s;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
