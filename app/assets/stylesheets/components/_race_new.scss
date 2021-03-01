@@ -1,0 +1,43 @@
+.new-race-container {
+  height: 100vh;
+  width: 100vw;
+  padding: 32px;
+}
+
+.new-race-top {
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  background-image: asset-url('opensea.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  z-index: -1;
+}
+
+.new-race-bottom {
+  position: fixed;
+  top: 50vh;
+
+  background-image: asset-url('crowd.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 50vh;
+  z-index: -1;
+}
+
+.new-race-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.new-race-form-container {
+  flex-grow: 1;
+  background-color: $race-gray;
+  font-family: 'VT323', monospace;
+  input[type='number'] {
+    width: 120px;
+  }
+}

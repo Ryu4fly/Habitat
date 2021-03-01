@@ -1,47 +1,27 @@
 <div class="race-index">
-  <div class="race-index-btn-container">
-    <button id="upcoming-btn">View upcoming races</button>
-    <button id="ongoing-btn">View ongoing races</button>
-  </div>
-  <div class="custom-container">
-    <% @races.each do |race| %>
-      <div class="custom-card <%= race_ongoing?(race) ? 'ongoing-card' : 'upcoming-card'%>" hidden>
-        <% if user_is_racer?(race) %>
-          <div class="you-are-in-this-race">You are in this race! </div>
-        <% end %>
-        <div class="custom-card-title">
-          <%= name_race(race) %>
-        </div>
-        <div class="race-index-card-starttime">
-          Start Time: <%= Race::MONTHS[race.start_time.month]%>, <%= race.start_time.day  %>
-          <br>
-          End Time: <%= Race::MONTHS[race.end_time.month]%>, <%= race.end_time.day  %>
-        </div>
-        <% unless race_not_started?(race) %>
-          <br>
-          <br/>
-          <%= link_to  "View this race", race_path(race), class: "link-btn" %>
-        <% end %>
-        <% if race_not_started?(race) %>
-          <br>
-          <br/>
-          <%= link_to  "Bet on this race", new_race_bet_path(race), class: "link-btn" %>
-          <% if user_is_racer?(race) %>
-            <br>
-            <br/>
-            <%= link_to  "View this race", race_path(race), class: "link-btn" %>
-          <% else %>
-            <% if race_full?(race) %>
-              <div>This race is full</div>
-            <% else %>
+  <div class="race-index-top"></div>
+  <div class="race-index-bottom"></div>
+  <div class="race-index-info-holder">
+    <div class="custom-container">
+      <% @races.each do |race| %>
+        <% unless user_is_racer?(race) || user_has_bets_on_race?(race) %>
+          <div class="race-index-custom-card upcoming-card thick-border" >
+            <div class="race-index-card-title">
+              <%= name_race(race) %>
+            </div>
+            <div class="race-index-card-starttime">
+              Start Time: <%= Race::MONTHS[race.start_time.month]%>, <%= race.start_time.day  %>
               <br>
-              <br/>
-              <%= link_to  "Join this race", race_path(race), class: "link-btn" %>
+              End Time: <%= Race::MONTHS[race.end_time.month]%>, <%= race.end_time.day  %>
+            </div>
+            <%= link_to  "Bet on this race", new_race_bet_path(race), class: "race-btn" %>
+            <% unless race_full?(race) %>
+              <%= link_to  "Join this race", race_path(race), class: "race-btn" %>
             <% end %>
-          <% end %>
+          </div>
         <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 <%= javascript_pack_tag "races-index" %>

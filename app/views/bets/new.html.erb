@@ -1,6 +1,8 @@
 <div class="new-bet">
-  <%= simple_form_for [@race, @bet] do |f| %>
-    <div class="new-bet-top">
+  <div class="new-bet-top"></div>
+  <div class="new-bet-bottom"></div>
+  <div class="stuff-container">
+    <%= simple_form_for [@race, @bet] do |f| %>
       <div class="new-bet-racers-container">
         The Nicotine Derby
         <div class="new-bet-racers-info-container thick-border">
@@ -13,8 +15,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="new-bet-bottom">
       <div class="new-bet-timer-container thick-border">
         <div class="timer-title">RACE BEGINS IN</div>
         <div class="new-bet-timer"><%= (@race.start_time - Time.now).to_i %></div>
@@ -24,8 +24,8 @@
         <div style="display: flex;"><%= image_tag 'dollar', height: 40, width: 29 %><%= f.input :amount, label: false, input_html: {min: 10, max: 1000, value: 10, step: 10} %></div>
         <%= f.submit "Bet", class: 'race-btn'%>
       </div>
-    </div>
-  <% end %>
-  <div class="hidden-info" data-hidden-info="<%=@average_cigs.to_json %>" hidden></div>
-  <%= javascript_pack_tag 'new-bets' %>
+    <% end %>
+    <div class="hidden-info" data-hidden-info="<%=@average_cigs.to_json %>" hidden></div>
+    <%= javascript_pack_tag 'new-bets' %>
+  </div>
 </div>
