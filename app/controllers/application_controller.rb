@@ -83,6 +83,22 @@ class ApplicationController < ActionController::Base
     (cigs_since_joining.to_f / (Date.today - first_date).to_f).round(1)
   end
 
+  def race_pool(race)
+      pool = 0
+      race.bets.each do |bet|
+        pool += bet.amount
+      end
+      pool
+  end
+
+  def lane_total(lane)
+      total = 0
+      lane.bets.each do |bet|
+        total += bet.amount
+      end
+      total
+  end
+
   private
 
   def skip_pundit?

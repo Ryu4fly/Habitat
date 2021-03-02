@@ -1,24 +1,61 @@
 <div class="race-show-top"></div>
 <div class="race-show-bottom"></div>
-<% if race_finished?(@race) %>
-  <h1>This race has ended</h1>
-<% end %>
-<% if race_ongoing?(@race) %>
-  <h1>This race is ongoing</h1>
-<% end %>
-<% if race_not_started?(@race) %>
-  <h1>This race hasn't started yet</h1>
-  <% unless @racer %>
-    <button id="race-join-btn">Join this race 🏇</button>
-  <% end %>
-  <div class="race-current_participants">
-    <h3>Racers</h3>
-    <div>
-      <% @lanes.each do |lane| %>
-        <%= lane.user.username %>
-        Odds: 1/100
-      <% end %>
+<div class="race-show">
+  <div class="new-bet-racers-container">
+    The Nicotine Derby
+    <div class="new-bet-racers-info-container thick-border">
+      <div class="new-bet-racer-column">
+        <table>
+          <tr>
+            <td class="underline">RACER</td>
+            <td class="underline">ODDS</td>
+            <td class="underline">TOTAL BETS</td>
+          </tr>
+          <% @average_cigs.each do |average_cig| %>
+            <% average_cig.each do |k, v|%>
+              <tr>
+                <td><% if k == current_user.username %>
+                    ✨
+                  <% end %>
+                  <%=k%></td>
+                <td><%= v[:odds] %></td>
+                <td>$<%= number_with_delimiter(v[:lane_total]) %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
     </div>
   </div>
-<% end %>
+  <% if race_ongoing?(@race) %>
+    <div class="new-bet-timer-container thick-border">
+      <div class="timer-title">RACE ENDS IN</div>
+      <div class="new-bet-timer"><%= (@race.end_time - Time.now).to_i %></div>
+    </div>
+  <% end %>
+  <% unless race_not_started?(@race) %>
+    <div class="race-ranking thick-border">
+      <% if race_finished?(@race) %>
+        <div class="smaller-title">FINAL RANKINGS</div>
+      <% else %>
+        <div class="smaller-title">CURRENT RANKINGS</div>
+      <% end %>
+      <% @ranking.each_with_index do |racer, index| %>
+        <div class="individual-racer-data">
+          <div><%= index + 1 %>: <%= racer[:user] %>
+            <% if index == 0 %>
+              🏆
+            <% end %>
+          </div>
+          <div> <%= racer[:total_cigs] %> CIGARETTES</div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <% if race_not_started?(@race) %>
+    <% unless @racer %>
+      <button id="race-join-btn" class="race-btn">JOIN THIS RACE</button>
+    <% end %>
+  <% end %>
+</div>
 <%= javascript_pack_tag "race-show" %>

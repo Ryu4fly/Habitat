@@ -3,9 +3,9 @@
 <div class="new-race-container">
   <div class="new-race-form-container thick-border">
     <%= simple_form_for @race do |f| %>
-      <%= f.label :start_time, "When do you want the race to start?" %>
+      <%= f.label :start_time, "RACE START DATE:" %>
       <%= f.date_field :start_time, min: Date.today + 1.day, max: @max_date %>
-      <%= f.input :duration, label: "How many days will the race last?", input_html: {min: 5, max: 30, value: 5} %>
+      <%= f.input :duration, label: "RACE DURATION", input_html: {min: 5, max: 30, value: 5} %>
       <%= f.submit "CREATE RACE", class: 'race-btn'%>
     <% end %>
   </div>
