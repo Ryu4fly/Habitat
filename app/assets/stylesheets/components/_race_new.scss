@@ -37,7 +37,12 @@
   flex-grow: 1;
   background-color: $race-gray;
   font-family: 'VT323', monospace;
+  text-align: center;
+  form {
+    display: flex;
+    flex-direction: column;
+  }
   input[type='number'] {
-    width: 120px;
+    text-align: center;
   }
 }

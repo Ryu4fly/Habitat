@@ -1,6 +1,7 @@
 <div class="race-show-top"></div>
 <div class="race-show-bottom"></div>
 <div class="race-show">
+  <%= link_to  "RACE DASHBOARD", race_dashboard_path, class: 'race-btn' %>
   <div class="new-bet-racers-container">
     The Nicotine Derby
     <div class="new-bet-racers-info-container thick-border">
@@ -24,13 +25,22 @@
             <% end %>
           <% end %>
         </table>
+        <% if @better && !@racer %>
+          <div class="my-bet-display">YOUR BET: $<%= @better.amount %> on <%= @better.lane.user.username %></div>
+        <% end %>
       </div>
     </div>
   </div>
-  <% if race_ongoing?(@race) %>
+  <% if race_ongoing?(@race)%>
     <div class="new-bet-timer-container thick-border">
       <div class="timer-title">RACE ENDS IN</div>
       <div class="new-bet-timer"><%= (@race.end_time - Time.now).to_i %></div>
+    </div>
+  <% end %>
+  <% if race_not_started?(@race) %>
+    <div class="new-bet-timer-container thick-border">
+      <div class="timer-title">RACE BEGINS IN</div>
+      <div class="new-bet-timer"><%= (@race.start_time - Time.now).to_i %></div>
     </div>
   <% end %>
   <% unless race_not_started?(@race) %>

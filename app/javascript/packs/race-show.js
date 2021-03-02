@@ -26,7 +26,8 @@ const joinRace = async () => {
     body: JSON.stringify({ join_race: true })
   });
   if (res.ok) {
-    window.location.href = '/race-dashboard';
+    console.log(res);
+    window.location.reload();
   }
 };
 
