@@ -64,7 +64,7 @@ class ApplicationController < ActionController::Base
 
   def user_has_bets_on_race?(race)
     race.bets.each do |bet|
-      return true if bet.user == current_user
+      return bet if bet.user == current_user
     end
     return false
   end
