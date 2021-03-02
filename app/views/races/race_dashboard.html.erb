@@ -2,6 +2,45 @@
   <div class="dashboard-box thick-border">
     <div class="small-title">Nicotine Derby</div>
     YOUR BALANCE: $<%= @balance %>
+    <div class="dashboard-buttons">
+      <button id="upcoming-race-btn" class="race-btn" value="upcomingRaces">UPCOMING RACES</button>
+      <button id="open-race-btn" class="race-btn" value="openRaces">OPEN RACES</button>
+      <button id="finished-race-btn" class="race-btn" value="completedRaces" >FINISHED RACES</button>
+    </div>
+    <div class="upcoming-races thick-border" hidden>
+      <div class="smaller-title">Upcoming Races</div>
+      <div class="flex-direction-row center">
+        <div class="flex-direction-column">
+          <div class="box-column underline">Betting on</div>
+          <div class="race-list">
+            <% betting_on_upcoming = 0 %>
+            <% @bets.each do |bet| %>
+              <% if race_not_started?(bet.race) && betting_on_upcoming < 4 %>
+                <% betting_on_upcoming += 1%>
+                <%= link_to race_path(bet.race) do%>
+                  <div class="race-list-item"><%= betting_on_upcoming %>.  <%= short_name(bet.race) %> </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="flex-direction-column">
+          <div class="box-column underline">Racing in</div>
+          <div class="race-list">
+            <% racing_in_upcoming = 0 %>
+            <% @my_lanes.each do |lane| %>
+              <% if race_not_started?(lane.race) && racing_in_upcoming < 4 %>
+                <% racing_in_upcoming += 1%>
+                <%= link_to race_path(lane.race) do%>
+                  <div class="race-list-item"><%= racing_in_upcoming %>.  <%= short_name(lane.race) %> </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class=""></div>
+      </div>
+    </div>
     <div class="open-races thick-border">
       <div class="smaller-title">Open Races</div>
       <div class="flex-direction-row center">
@@ -36,8 +75,8 @@
         <div class=""></div>
       </div>
     </div>
-    <div class="completed-races thick-border">
-      <div class="smaller-title">Completed Races</div>
+    <div class="completed-races thick-border" hidden >
+      <div class="smaller-title">Finished Races</div>
       <div class="flex-direction-row center">
         <div class="flex-direction-column">
           <div class="box-column underline">Bet on</div>
@@ -78,3 +117,4 @@
     </div>
   </div>
 </div>
+<%= javascript_pack_tag 'race-dashboard' %>

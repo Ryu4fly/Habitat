@@ -23,6 +23,7 @@
   padding: 32px;
   overflow-y: scroll;
   display: flex;
+  width: 100vw;
   flex-direction: column;
 }
 
@@ -32,7 +33,6 @@
 
 .race-index-custom-card {
   background-color: $race-gray;
-  flex-grow: 1;
   padding: 16px;
   margin: 8px;
   border-radius: 8px;
@@ -40,5 +40,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
+  flex-grow: 1;
 }

@@ -7,7 +7,18 @@ class RacesController < ApplicationController
     def show
         @race = Race.find(params[:id])
         @racer = user_is_racer?(@race)
+        @better = user_has_bets_on_race?(@race)
         @lanes = @race.lanes
+        @average_cigs = []
+        @ranking = []
+        @pool = race_pool(@race)
+        @race.lanes.each do |lane|
+          lane_sum = lane_total(lane)
+          odds = lane_sum == 0 ? '10/1' : (race_pool(@race) / lane_sum).to_r
+          @ranking << { user: lane.user.username, total_cigs: cigs_since_race_began(lane) }
+          @average_cigs << Hash[lane.user.username, {lane_total: lane_total(lane), odds: odds}]
+      end
+        @ranking.sort_by! { |k| k[:total_cigs]}
         authorize @race
     end
 
@@ -19,6 +30,7 @@ class RacesController < ApplicationController
 
     def create
         @race = Race.new(race_params)
+        @race.end_time = params[:start_time] + params[:duration]
         authorize @race
         if @race.save
             redirect_to races_path
@@ -29,6 +41,7 @@ class RacesController < ApplicationController
 
     def update
         @race = Race.find(params[:id])
+
         authorize @race
         join_race(@race) if params[:join_race]
     end
@@ -53,7 +66,7 @@ class RacesController < ApplicationController
     private
 
     def race_params
-        params.require(:race).permit(:start_time, :duration, :public)
+        params.require(:race).permit(:start_time, :duration)
     end
 
     def join_race(race)
@@ -61,6 +74,15 @@ class RacesController < ApplicationController
         @lane.user = current_user
         @lane.race = race
         @lane.save
+    end
+
+    def cigs_since_race_began(lane)
+        cig_total = 0
+        relevant_entries = lane.user.entries.where('date > ? AND date < ?', lane.race.start_time, lane.race.end_time)
+        relevant_entries.each do |entry|
+            cig_total += entry.cig_smoked
+        end
+        cig_total
     end
 
 end
