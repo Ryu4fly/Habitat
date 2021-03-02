@@ -1,1 +1,31 @@
-// Specific CSS for your home-page
+.landing-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark-green;
+
+  .contents {
+    width: 90vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-width: 10px;
+    border-radius: 12px;
+    background-color: $race-gray;
+
+    #carousel-container {
+      width: 80vw;
+      height: 76vh;
+
+      .inner-content {
+        height: 70vh;
+        border-radius: 12px;
+      }
+    }
+  }
+}
