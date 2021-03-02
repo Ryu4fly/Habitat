@@ -1,48 +1,31 @@
 <div class="landing-container">
-  <div class="contents">
-    <h1>Nicotine Derby</h1>
-    <h5>Join the Race to Reduce Smoking</h5>
-    <div id="carousel-container" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-container" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-container" data-slide-to="1"></li>
-        <li data-target="#carousel-container" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner inner-content">
-        <div class="carousel-item active">
-          <%= image_tag "profile", alt: "alttext"%>
-          <div class="carousel-caption app-caption d-xs-block d-sm-block d-md-block w-50 h-100">
-            <h5>Join the Fun</h5>
-            <p>...</p>
-          </div>
+  <div class="banner">
+    <div class="cover-sheet">
+        <div class="title">
+          <h1>Nicotine Derby</h1>
+          <p>Race to Reduce Smoking</p>
+
+          <%= link_to new_user_session_path do %>
+            <button>Login</button>
+          <% end %>
+
         </div>
-        <div class="carousel-item">
-          <%= image_tag "profile", alt: "alttext"%>
-          <div class="carousel-caption app-caption d-xs-block d-sm-block d-md-block w-50 h-100">
-            <h5>Join the Fun</h5>
-            <p>...</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <%= image_tag "profile", alt: "alttext"%>
-          <!-- <img class="d-block w-100" src="..." alt="First slide"> -->
-          <div class="carousel-caption app-caption d-xs-block d-sm-block d-md-block w-50 h-100">
-            <h5>Join the Fun</h5>
-            <p>...</p>
-          </div>
+        <div class="down-arrow">
+          <span class="iconify" data-icon="bi:arrow-down-circle" data-inline="false"></span>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carousel-container" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carousel-container" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
-    <%= link_to new_user_session_path do %>
-      <button class="button">Login</button>
-    <% end %>
+
+  <div class="about-app">
+    <div class="about-background">
+      <div class="ocean"></div>
+      <div class="crowd"></div>
+    </div>
+    <div class="phone-demo">
+      <div id="iphonecase">
+      </div>
+      <div class="screen">
+      </div>
+    </div>
   </div>
 </div>
