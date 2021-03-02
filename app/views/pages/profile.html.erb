@@ -1,21 +1,63 @@
-<div class="profile-container">
+<div class="main-container">
 
-  <div class="user-welcome">
-    <div class="avatar-img">
-      <%= image_tag "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", class: "avatar-large"%>
+  <div class="upper-section">
+    <div class="user-welcome">
+      <div class="avatar-img">
+        <%= image_tag "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", class: "avatar-large"%>
+      </div>
+      <div class="welcome-text">
+        <h3>Welcome back <%= current_user.username.capitalize %></h3>
+        <p>How are you feeling today?</p>	
+        <p class="new-entry"><%= link_to "Log a new entry", new_entry_path, id: 'new-entry' %></p>
+      </div>
+      <p>
+        <%= link_to destroy_user_session_path, id:'logout' do %>
+          <i class="fas fa-ellipsis-v"></i>
+        <% end %>
+      </p>
     </div>
-    <div class="text">
-      <h3>Hello <%= current_user.username.capitalize %></h3>
-      <p>How are you feeling today?</p>	
-    </div>
-  </div>
-  <div class="new-entry">
-    <p><%= link_to "Log a new entry", new_entry_path, id: 'new-entry' %></p>
   </div>
 
-  <div class="tabs">
-    <%= render "components/profile_info_cards" %>
+  <div class="middle-section">
+    <div class="progress-dashboard responsive-position">
+      <h3>Your progress dashboard</h3>
+      <div class="progress-cards">
+        <div class="progress-element">
+          <div class="number">
+            <p>21$</p>
+          </div>
+          <p class="elem-text">Money Saved</p>
+        </div>
+        <div class="progress-element">
+          <div class="number">
+            <p>56</p>
+          </div>
+          <p class="elem-text">Cigarettes Not Smoked</p>
+        </div>
+        <div class="progress-element">
+          <div class="number">
+            <p>2</p>
+          </div>
+          <p class="elem-text">Races Won</p>
+        </div>
+      </div>
+    </div>
+    <div class="link-cards">
+      <%= link_to entries_path, id: 'diary' do %>
+        <span class="iconify" data-inline="false" data-icon="fluent:book-star-24-regular" style="color: #fff;"></span>
+      <% end %>
+      <h5>Diary</h5>
+      <p>Find and review all your entries here</p>
+    </div>
+    </div>
+    <div class="timer">
+    </div>
   </div>
+
+  <div class="bottom-section">
+  </div>
+
+  
 
   <div class="menu">
       <p><%= link_to "DIARY", entries_path, id:'diary' %></p>

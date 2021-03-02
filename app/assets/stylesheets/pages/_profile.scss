@@ -1,143 +1,217 @@
-.profile-container {
-  margin: 5%;
-  background-color: transparent;
-  // border-radius: 10px;
+.main-container {
+  background-color: #030306;
+}
 
-  .user-welcome { 
-    display: flex;
-    justify-content: space-around;
+.upper-section {
+  padding: 5%;
+  background: rgb(79,78,233);
+  background: linear-gradient(207deg, rgba(79,78,233,1) 0%, rgba(0,166,122,1) 100%);
+}
+
+.user-welcome { 
+  display: flex;
+  // justify-content: space-around;
+}
+
+.avatar-img {
+  padding: 8px;
+  img {  
+    border: 1px solid #FFFFFF;
+    padding: 2px;
   }
+}
 
-  .avatar-img {
-    padding: 8px;
+.welcome-text {
+  margin-top: 1.4rem;
+  padding-left: 1%;
+  flex-grow: 1;
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0;
   }
-
-  .text {
-    margin-top: 1.4rem;
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0;
-    }
-    p {
-      font-size: 1rem;
-      font-weight: 400;
-    }
+  p {
+    font-size: 0.8rem;
+    font-weight: 300;
   }
+}
 
-  .new-entry {
+.new-entry {
+  text-align: center;
+  display: inline-block;
+  margin-top: 10%;
+  margin-bottom: 37%;
+  #new-entry {
+    background-color: transparent;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: white;
+    padding: 8px 24px;
+    border-radius: 20px;
+    text-align: left;
+    display: inline;
+    border-width: 1px;
+    border-style: solid;
+  }
+}
+
+#logout {
+  padding-right: 2%;
+  i {
+    font-size: 0.8rem;
+    color: white;
+    padding-right: 2%;
+  }
+}
+
+.responsive-position {
+  --height: 170px;
+}
+
+.progress-dashboard {
+  background-color: #121422;
+  margin: 0 3%;
+  border-radius: 40px;
+  height: var(--height);
+  position: relative;
+  top: calc(var(--height) / 2 * -1);
+  h3 {
+    font-size: 1rem;
     text-align: center;
-    margin: 9% 0;
-    #new-entry {
-      background-color: #FFEE59;
-      font-size: 1rem;
-      text-decoration: none;
-      color: black;
-      padding: 9px;
-      border-radius: 20px;
-    }
+    padding: 3% 0;
   }
+}
 
-  .menu {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
-    position: relative;
-    // bottom: -200px;
-    p {
-      color: white;
-    }
-    #diary, #races, #stats, #logout {
-      color: white;
-      font-size: 1rem;
-      font-weight: 500;
+.progress-cards {
+  display: flex;
+  justify-content: space-around;
+}
 
-    }
-  }
-
-  .tabs {
-    margin-top: 70px;
-    padding: 0 17px;
-  }
-
-  .open-sea {
-    height: 50vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .profile-scoreboard {
-      background-color: rgb(59,74,61);
-      height: 251px;
-      width: 329px;
-      margin-top: 5vh;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      .score-stats {
-        background-color: #312F2F;
-        height: 193px;
-        width: 309px;
-        border-radius: 12px;
-        border-style: solid;
-        border-width: 7px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-
-        #board-title {
-          grid-column: 1/4;
-          text-align: center;
-          align-self: center;
-          font-size: 16px;
-        }
-      }
-    }
-
-    .profile-menu {
-      margin-top: 12%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      p {
-        font-size: 12px;
-        color: white;
-      }
-
-      #derby {
-        margin: 0 8%;
-      }
-
-      a {
-        color: white;
-      }
-
-      #menu-title {
-        font-size: 16px;
-      }
-
-      .menu-options {
-        width: 100vw;
-        display: flex;
-        margin-right: 1vh;
-        justify-content: center;
-        align-items: baseline;
-      }
-    }
-  }
-
-  .crowd-img {
-    background-image: asset-url("crowd");
-    background-size: cover;
-    height: 45vh;
-    width: 100vw;
+.progress-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .number {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid #00A67A;
     display: flex;
     justify-content: center;
-
+    align-items: center;
+    p {
+      font-size: 1.2rem;
+    }
   }
-
+  .elem-text {
+    font-weight: 300;
+    padding-top: 0.5rem;
+    font-size: 0.7rem;
+  }
 }
+
+.menu {
+  // display: flex;
+  // justify-content: space-around;
+  // margin-top: 50px;
+  // position: relative;
+  // bottom: -200px;
+  p {
+    color: white;
+  }
+  // #diary, #races, #stats, #logout {
+  //   color: white;
+  //   font-size: 1rem;
+  //   font-weight: 500;
+
+  // }
+}
+
+//   .tabs {
+//     margin-top: 70px;
+//     padding: 0 17px;
+//   }
+
+//   .open-sea {
+//     height: 50vh;
+//     width: 100vw;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+
+//     .profile-scoreboard {
+//       background-color: rgb(59,74,61);
+//       height: 251px;
+//       width: 329px;
+//       margin-top: 5vh;
+//       border-radius: 12px;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: center;
+//       align-items: center;
+
+//       .score-stats {
+//         background-color: #312F2F;
+//         height: 193px;
+//         width: 309px;
+//         border-radius: 12px;
+//         border-style: solid;
+//         border-width: 7px;
+//         display: grid;
+//         grid-template-columns: repeat(3, 1fr);
+//         grid-template-rows: repeat(4, 1fr);
+
+//         #board-title {
+//           grid-column: 1/4;
+//           text-align: center;
+//           align-self: center;
+//           font-size: 16px;
+//         }
+//       }
+//     }
+
+//     .profile-menu {
+//       margin-top: 12%;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+
+//       p {
+//         font-size: 12px;
+//         color: white;
+//       }
+
+//       #derby {
+//         margin: 0 8%;
+//       }
+
+//       a {
+//         color: white;
+//       }
+
+//       #menu-title {
+//         font-size: 16px;
+//       }
+
+//       .menu-options {
+//         width: 100vw;
+//         display: flex;
+//         margin-right: 1vh;
+//         justify-content: center;
+//         align-items: baseline;
+//       }
+//     }
+//   }
+
+//   .crowd-img {
+//     background-image: asset-url("crowd");
+//     background-size: cover;
+//     height: 45vh;
+//     width: 100vw;
+//     display: flex;
+//     justify-content: center;
+
+//   }
+
+// }
