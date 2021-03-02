@@ -7,6 +7,7 @@ class RacesController < ApplicationController
     def show
         @race = Race.find(params[:id])
         @racer = user_is_racer?(@race)
+        @better = user_has_bets_on_race?(@race)
         @lanes = @race.lanes
         @average_cigs = []
         @ranking = []

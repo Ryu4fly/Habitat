@@ -53,7 +53,7 @@
     </div>
   <% end %>
   <% if race_not_started?(@race) %>
-    <% unless @racer %>
+    <% unless @racer || @better %>
       <button id="race-join-btn" class="race-btn">JOIN THIS RACE</button>
     <% end %>
   <% end %>
