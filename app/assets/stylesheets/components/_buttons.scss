@@ -32,3 +32,8 @@ button {
   white-space: nowrap;
   color: white;
 }
+
+.race-btn:hover {
+  color: $light-gray;
+  text-decoration: none;
+}
