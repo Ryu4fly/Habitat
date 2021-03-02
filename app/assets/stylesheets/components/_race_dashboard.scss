@@ -3,12 +3,23 @@
   background-color: $dark-green;
   height: 100vh;
   padding: 8px;
+  font-size: 12px;
   text-align: center;
   a {
     color: white;
   }
 }
-
+.dashboard-buttons {
+  display: flex;
+  .race-btn {
+    font-size: 12px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: fit-content;
+    border-radius: 0px;
+    border-style: groove;
+  }
+}
 .thick-border {
   border-style: solid;
   border-width: 6px;
@@ -46,7 +57,19 @@
   font-size: 18px;
   font-weight: 900;
 }
+.upcoming-races {
+  width: 100%;
+  text-align: center;
+  max-height: 25vh;
+  overflow: scroll;
+}
 .open-races {
+  width: 100%;
+  text-align: center;
+  max-height: 25vh;
+  overflow: scroll;
+}
+.completed-races {
   width: 100%;
   text-align: center;
   max-height: 25vh;
@@ -55,13 +78,6 @@
 
 .underline {
   text-decoration: underline;
-}
-
-.completed-races {
-  width: 100%;
-  text-align: center;
-  max-height: 25vh;
-  overflow: scroll;
 }
 
 .menu-box {

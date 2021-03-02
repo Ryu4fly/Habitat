@@ -123,16 +123,14 @@ def add_racers_to_race(race)
   end
 end
 
-100.times do
+120.times do
   race = Race.new
   race.duration = rand(5..31)
   race.public = [true, false].sample
-  year = [2020,2021].sample
-  month = rand(1..12)
-  if rand(1..3) == 3
-    year = Time.now.year
-    month = Time.now.month
-  end
+  year = Time.now.year
+  month = Time.now.month
+  month = Time.now.month - 1 if rand(0..3) == 0
+  month = Time.now.month + 1 if rand(0..4) == 0
   day = days_in_month(month)
   race.start_time = Time.new(year, month, day )
   race.end_time = Time.at( race.start_time + race.duration.days )
