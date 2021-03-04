@@ -1,6 +1,9 @@
 .avatar {
-  width: 40px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  background-size: cover;
+  margin: 0;
 }
 
 .avatar-large {
@@ -20,4 +23,19 @@
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border: white 1px solid;
+}
+
+#OoKiaoO {
+  background-image: url("https://avatars.githubusercontent.com/u/61822164?v=4");
+  box-shadow: 0px 0px 10px 2px #7ef49f;
+}
+
+#HatAndBread {
+  background-image: url("https://avatars.githubusercontent.com/u/61222965?v=4");
+  box-shadow: 0px 0px 10px 2px #CFA9FE;
+}
+
+#Ryu4fly {
+  background-image: url("https://avatars.githubusercontent.com/u/67157023?v=4");
+  box-shadow: 0px 0px 10px 2px #68E2F6;
 }

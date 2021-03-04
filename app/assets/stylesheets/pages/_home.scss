@@ -94,13 +94,105 @@
         background-repeat: no-repeat;
         background-position: 50% 0;
         position: absolute;
+        z-index: 1;
       }
 
       .screen {
-        background-image: asset-url("img-test");
         height: 75vh;
         width: 77vw;
         border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        #app-preview {
+          height: 75vh;
+          width: 77vw;
+          border-radius: 30px;
+          position: absolute;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+
+          .images {
+            height: 75vh;
+            width: 36vh;
+            border-radius: 30px;
+          }
+
+          .carousel-buttons {
+            z-index: 2;
+          }
+        }
+      }
+    }
+  }
+
+  .developers-container {
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    .developers {
+      grid-column: 1/6;
+      grid-row: 1/2;
+      text-align: center;
+      margin-top: 2vh;
+
+      .select-one {
+        .git-icon {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    .git-profiles {
+      grid-column: 1/6;
+      grid-row: 2/5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      .git-links {
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .names {
+          padding-top: 2vh;
+          font-size: 18px;
+        }
+      }
+
+      .git-links:hover {
+        text-decoration: none;
+        color: white;
+      }
+    }
+
+
+    .footer {
+      width: 90vw;
+      grid-column: 1/6;
+      grid-row: 5/6;
+      justify-self: center;
+      align-self: end;
+      border-top: solid;
+      border-width: 2px;
+      margin-bottom: 2vh;
+
+      .sponsor {
+        text-align: right;
+        padding-top: 1vh;
+        padding-right: 3vw;
       }
     }
   }
