@@ -1,143 +1,323 @@
-.profile-container {
-  margin: 5%;
-  background-color: transparent;
-  // border-radius: 10px;
+.main-container {
+  background-color: #030306;
+}
 
-  .user-welcome { 
-    display: flex;
-    justify-content: space-around;
+.upper-section {
+  padding: 5%;
+  background: rgb(79,78,233);
+  background: linear-gradient(207deg, rgba(79,78,233,1) 0%, rgba(0,166,122,1) 100%);
+}
+
+.user-welcome { 
+  display: flex;
+  // justify-content: space-around;
+}
+
+.avatar-img {
+  padding: 8px;
+  img {  
+    border: 1px solid #FFFFFF;
+    padding: 2px;
   }
+}
 
-  .avatar-img {
-    padding: 8px;
+.welcome-text {
+  margin-top: 1.4rem;
+  padding-left: 1%;
+  flex-grow: 1;
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
   }
-
-  .text {
-    margin-top: 1.4rem;
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0;
-    }
-    p {
-      font-size: 1rem;
-      font-weight: 400;
-    }
+  p {
+    font-size: 1rem;
+    font-weight: 300;
   }
+}
 
-  .new-entry {
+.new-entry {
+  text-align: center;
+  display: inline-block;
+  margin-top: 10%;
+  margin-bottom: 37%;
+  #new-entry {
+    background-color: transparent;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: white;
+    padding: 8px 24px;
+    border-radius: 20px;
+    text-align: left;
+    display: inline;
+    border-width: 1px;
+    border-style: solid;
+  }
+}
+
+#logout {
+  padding-right: 2%;
+  i {
+    font-size: 0.8rem;
+    color: white;
+    padding-right: 2%;
+  }
+}
+
+$height: 170px;
+
+.progress-dashboard {
+  height: $height;
+  background-color: #121422;
+  margin: 0 3%;
+  border-radius: 40px;
+  position: relative;
+  top: $height / 2 * -1;
+  h3 {
+    font-size: 1rem;
     text-align: center;
-    margin: 9% 0;
-    #new-entry {
-      background-color: #FFEE59;
-      font-size: 1rem;
-      text-decoration: none;
-      color: black;
-      padding: 9px;
-      border-radius: 20px;
-    }
+    padding: 3% 0;
   }
+}
 
-  .menu {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
-    position: relative;
-    // bottom: -200px;
-    p {
-      color: white;
-    }
-    #diary, #races, #stats, #logout {
-      color: white;
-      font-size: 1rem;
-      font-weight: 500;
+.progress-cards {
+  display: flex;
+  justify-content: space-around;
+}
 
-    }
-  }
-
-  .tabs {
-    margin-top: 70px;
-    padding: 0 17px;
-  }
-
-  .open-sea {
-    height: 50vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .profile-scoreboard {
-      background-color: rgb(59,74,61);
-      height: 251px;
-      width: 329px;
-      margin-top: 5vh;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      .score-stats {
-        background-color: #312F2F;
-        height: 193px;
-        width: 309px;
-        border-radius: 12px;
-        border-style: solid;
-        border-width: 7px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-
-        #board-title {
-          grid-column: 1/4;
-          text-align: center;
-          align-self: center;
-          font-size: 16px;
-        }
-      }
-    }
-
-    .profile-menu {
-      margin-top: 12%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      p {
-        font-size: 12px;
-        color: white;
-      }
-
-      #derby {
-        margin: 0 8%;
-      }
-
-      a {
-        color: white;
-      }
-
-      #menu-title {
-        font-size: 16px;
-      }
-
-      .menu-options {
-        width: 100vw;
-        display: flex;
-        margin-right: 1vh;
-        justify-content: center;
-        align-items: baseline;
-      }
-    }
-  }
-
-  .crowd-img {
-    background-image: asset-url("crowd");
-    background-size: cover;
-    height: 45vh;
-    width: 100vw;
+.progress-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .number {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid #00A67A;
     display: flex;
     justify-content: center;
-
+    align-items: center;
+    p {
+      font-size: 1.2rem;
+    }
   }
-
+  .elem-text {
+    font-weight: 300;
+    padding-top: 0.5rem;
+    font-size: 0.7rem;
+  }
 }
+
+.link-cards {
+  display: flex;
+  justify-content: space-between;
+  margin: 3%;
+}
+
+.link-card {
+  width: 20%;
+  background-color: #121422;
+  flex-grow: 1;
+  position: relative;
+  top: $height / 2 * -1;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  padding: 3% 8%;
+  text-align: center;
+  h5 {
+    margin: 5% 0;
+  }
+  p {
+    font-size: 0.6rem;
+    font-weight: 300;
+  }
+}
+
+.svg-container {
+  height: 50px;
+  width:50px;
+  border-radius: 10px;
+  background: linear-gradient(207deg, rgba(79,78,233,1) 0%, rgba(0,166,122,1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    height: 70%;
+    width: 70%;
+  }
+}
+
+#diary-link {
+  margin-right: 3%;
+}
+
+.timer {
+  position: relative;
+  overflow: hidden;
+  top: $height / 2 * -1;
+  padding: 2% 0 6% 0;
+}
+
+$timer-size: 300px;
+
+.outer-ring {
+  position: absolute;
+  left: calc(50% - 150px);
+  height: $timer-size;
+  width: $timer-size;
+  background-image: linear-gradient(135deg, #FEED07 0%, #00A67A 15%, #009FAF 30%, #0096DE 40%, #0089FD 50%, #0073FF 60%, #4F4EE9 100%);
+  border-radius: 50%;
+  
+  /*  Rotate  */
+  animation-duration: 10s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(360deg);}
+}
+
+$outer-circle-size: 285px;
+
+.black-outer-circle {
+  position: relative;
+  z-index: 2;
+  height: $outer-circle-size;
+  width: $outer-circle-size;
+  background-color: #030306;
+  margin: 0 auto;
+  border-radius: 50%;
+  top: ($timer-size - $outer-circle-size) / 2;
+}
+
+$inner-circle-size: 270px;
+
+.black-inner-circle {
+  position: relative;
+  height: $inner-circle-size;
+  width: $inner-circle-size;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin: 0 auto;
+  top: ($outer-circle-size - $inner-circle-size) / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h5 {
+    font-weight: 300;
+    font-size: 1.4rem;
+    margin: 0;
+    padding-top: 10%;
+  }
+}
+
+.timer-count {
+  display: flex;
+  justify-content: space-around;
+  .unit {
+    padding: 0 10%;
+    text-align: center;
+    p {
+      font-size: 1rem;
+    }
+    .number {
+      font-weight: 500;
+      font-size: 3rem;
+    }
+  }
+}
+
+.bottom-section {
+  img {
+    position: absolute;
+    bottom: -227px;
+  }
+  background-color: #1515D0;
+}
+
+.spectators {
+  position: relative;
+  margin: 0 3%;
+  border: 4px solid white;
+  border-radius: 40px;
+  height: 11rem;
+  bottom: 30px;
+  background-image: url(crowd.jpg);
+  background-position: center;
+}
+
+.derby {
+  background-color: #37463A;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  text-align: center;
+  border: 3px solid white;
+  border-radius: 40px;
+  margin: 5%;
+  height: 130px;
+  h3 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding-top: 4%;
+    text-decoration: underline;
+  }
+  p {
+    padding: 0 8%;
+  }
+}
+
+#races-b {
+  margin-top: 15px;
+}
+
+#races-button {
+  border: 1px solid white;
+  background-color: #2C2B2B;
+  color: white;
+  text-decoration: none;
+  padding: 3% 5%;
+  font-weight: 300;
+  font-size: 0.8rem;
+  width: 170%;
+  border-radius: 5px;
+  margin: 10% 0;
+}
+
+
+
+// .gradient-background {
+//   width: 100%;
+//   height: 50%;
+//   border-radius: 50%;
+//   background: linear-gradient(222deg, #4f4ee9, #00a67a);
+//   background-size: 400% 400%;
+
+//   -webkit-animation: animated-gradient 34s ease infinite;
+//   -moz-animation: animated-gradient 34s ease infinite;
+//   animation: animated-gradient 34s ease infinite;
+// }
+
+// @-webkit-keyframes animated-gradient {
+//   0%{background-position:90% 0%}
+//   50%{background-position:11% 100%}
+//   100%{background-position:90% 0%}
+// }
+// @-moz-keyframes animated-gradient {
+//   0%{background-position:90% 0%}
+//   50%{background-position:11% 100%}
+//   100%{background-position:90% 0%}
+// }
+// @keyframes animated-gradient {
+//   0%{background-position:90% 0%}
+//   50%{background-position:11% 100%}
+//   100%{background-position:90% 0%}
+// }
