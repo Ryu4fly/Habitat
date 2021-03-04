@@ -1,3 +1,18 @@
+const closerBtn = document.querySelector('.closer-btn');
+const uncollectedEarnings = document.querySelector('.uncollected-earnings');
+const claimMoneyBtn = document.getElementById('claim-money-btn');
+
+if (closerBtn) {
+  closerBtn.addEventListener('click', () => {
+    uncollectedEarnings.hidden = true;
+  });
+}
+if (claimMoneyBtn) {
+  claimMoneyBtn.addEventListener('click', () => {
+    window.location.href = '/claim-bets';
+  });
+}
+
 const activeColor = '#312f2f';
 const inactiveColor = '#37463a';
 let openElement = 'openRaces';

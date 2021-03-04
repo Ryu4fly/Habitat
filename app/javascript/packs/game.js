@@ -30,7 +30,7 @@ s.loadAudio();
 let moneyBonus = 1;
 let currentMoney = 0;
 
-if (window.innerWidth < window.innerHeight) {
+if (window.innerWidth < window.innerHeight && window.innerWidth < 420) {
   s.addCanvas(canvas, window.innerWidth - 16, window.innerWidth / 1.4);
 } else {
   s.addCanvas(canvas, 300, 200);

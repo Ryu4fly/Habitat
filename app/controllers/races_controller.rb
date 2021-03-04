@@ -59,6 +59,11 @@ class RacesController < ApplicationController
 
     def race_dashboard
         @races = Race.includes(:bets)
+        @my_bets = Bet.where('user_id = ? AND winnings_have_been_collected = ?', current_user.id, false)
+        @unclaimed_winnings = []
+        @my_bets.each do |bet|
+            @unclaimed_winnings << bet if bet.race.end_time < Time.now
+        end
         @bets = current_user.bets.order(created_at: :desc)
         @my_lanes = current_user.lanes.order(created_at: :desc)
         @balance = current_user.balance
@@ -69,7 +74,13 @@ class RacesController < ApplicationController
         p params
         @race = Race.first
         authorize @race
-        current_user.update(balance: params[:earned_money] + current_user.balance)
+        current_user.update(balance: params[:earned_money].to_i + current_user.balance)
+        if params[:bet_id]
+            @bet = Bet.find(params[:bet_id])
+            @bet.update(winnings_have_been_collected: true)
+            puts "🪕🪕🪕🪕🪕🪕🪕🪕🪕🪕🪕🪕🪕"
+            p @bet
+        end
         puts current_user.balance
         puts "💰"
 

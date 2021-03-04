@@ -28,6 +28,8 @@ class ApplicationController < ActionController::Base
   helper_method :race_full?
   helper_method :race_odds
   helper_method :avg_cig
+  helper_method :lane_total
+  helper_method :race_pool
 
   def name_race(race)
       race_name = ''
