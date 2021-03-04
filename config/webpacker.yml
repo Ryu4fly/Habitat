@@ -22,6 +22,7 @@ default: &default
     - .jpg
     - .jpeg
     - .png
+    - .mp3
     - .gif
     - .tiff
     - .ico
@@ -42,6 +43,7 @@ default: &default
     - .module.scss
     - .module.css
     - .png
+    - .mp3
     - .svg
     - .gif
     - .jpeg
@@ -70,7 +72,6 @@ development:
       'Access-Control-Allow-Origin': '*'
     watch_options:
       ignored: '**/node_modules/**'
-
 
 test:
   <<: *default

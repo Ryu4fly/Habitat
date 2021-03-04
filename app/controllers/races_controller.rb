@@ -65,6 +65,16 @@ class RacesController < ApplicationController
         authorize @races
     end
 
+    def update_balance
+        p params
+        @race = Race.first
+        authorize @race
+        current_user.update(balance: params[:earned_money] + current_user.balance)
+        puts current_user.balance
+        puts "💰"
+
+    end
+
     private
 
     def race_params

@@ -8,4 +8,8 @@ class PagesController < ApplicationController
     @habits = current_user.habit
   end
 
+  def game
+    @balance = current_user.balance
+  end
+
 end
