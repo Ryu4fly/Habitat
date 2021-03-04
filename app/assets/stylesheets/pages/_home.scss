@@ -140,7 +140,13 @@
       grid-column: 1/6;
       grid-row: 1/2;
       text-align: center;
-      margin-top: 5vh;
+      margin-top: 2vh;
+
+      .select-one {
+        .git-icon {
+          font-size: 3rem;
+        }
+      }
     }
 
     .git-profiles {
