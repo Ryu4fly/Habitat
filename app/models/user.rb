@@ -2,6 +2,7 @@ class User < ApplicationRecord
   before_validation :create_balance
 
   validates :username, presence: true, uniqueness: true
+  validates :balance, numericality: {only_integer: true}
 
   has_many :entries, dependent: :destroy
   has_many :races, through: :lanes
@@ -16,9 +17,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
   private
 
   def create_balance
-    self.balance = 500
+    unless self.balance
+      self.balance = 500
+    end
   end
+
 end

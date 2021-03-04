@@ -29,4 +29,8 @@ class RacePolicy < ApplicationPolicy
     true
   end
 
+  def update_balance?
+    true
+  end
+
 end

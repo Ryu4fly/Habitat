@@ -1,3 +1,11 @@
+.race-nav {
+  display: flex;
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
+  margin-bottom: 10px;
+}
+
 .race-index {
   font-family: 'VT323', monospace;
 }

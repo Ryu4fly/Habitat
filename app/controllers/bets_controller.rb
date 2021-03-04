@@ -12,6 +12,7 @@ class BetsController < ApplicationController
       @race = Race.find(params[:race_id])
       @average_cigs = []
       @pool = race_pool(@race)
+      @user = current_user
       @race.lanes.each do |lane|
         lane_sum = lane_total(lane)
         odds = lane_sum == 0 ? '10/1' : (race_pool(@race) / lane_sum).to_r
@@ -26,6 +27,7 @@ class BetsController < ApplicationController
       authorize @bet
 
       if @bet.save
+        current_user.update(balance: @bet.user.balance - @bet.amount)
         redirect_to race_dashboard_path
       else
         render :new
