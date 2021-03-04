@@ -1,30 +1,106 @@
 .landing-container {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $dark-green;
 
-  .contents {
-    width: 90vw;
-    height: 95vh;
+  .banner {
+    width: 100vw;
+    height: 100vh;
+    background-image: asset-url("iphonemockup");
+    background-size: cover;
+    background-position: 45% 0%;
+
+    .cover-sheet {
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.5);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+
+      .title {
+        grid-column: 1/6;
+        grid-row: 2/4;
+        align-self: center;
+        margin-left: 10vw;
+        margin-bottom: 0;
+        font-family: 'VT323', monospace;
+
+        h1 {
+          font-size: 3rem;
+          font-family: 'VT323', monospace;
+        }
+
+        p {
+          font-size: 1.5rem;
+        }
+
+        button {
+          margin-top: 2vh;
+          width: 30vw;
+          padding: 0;
+          font-size: 1.5rem;
+        }
+      }
+
+      .down-arrow {
+        grid-column: 1/6;
+        grid-row: 5/6;
+        justify-self: center;
+        align-self: end;
+        font-size: 3rem;
+        padding-bottom: 1vh;
+      }
+    }
+  }
+
+  .about-app {
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid;
-    border-width: 10px;
-    border-radius: 12px;
-    background-color: $race-gray;
 
-    #carousel-container {
-      width: 80vw;
-      height: 76vh;
+    .about-background {
+      height: 100vh;
+      width: 100vw;
 
-      .inner-content {
-        height: 70vh;
-        border-radius: 12px;
+      .ocean {
+        background-image: asset-url("opensea");
+        height: 50vh;
+        width: 100vw;
+        background-size: cover;
+      }
+
+      .crowd {
+        background-image: asset-url("crowd");
+        height: 50vh;
+        width: 100vw;
+        background-size: cover;
+      }
+    }
+    .phone-demo {
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      #iphonecase {
+        width: 100vw;
+        height: 80vh;
+        background-image: asset-url("iphone11");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        position: absolute;
+      }
+
+      .screen {
+        background-image: asset-url("img-test");
+        height: 75vh;
+        width: 77vw;
+        border-radius: 30px;
       }
     }
   }
