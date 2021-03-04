@@ -32,3 +32,25 @@ button {
   white-space: nowrap;
   color: white;
 }
+
+.race-btn:hover {
+  color: $light-gray;
+  text-decoration: none;
+}
+
+.race-nav-btn {
+  font-family: 'VT323', monospace;
+  flex-grow: 1;
+  background-color: $dark-green;
+  white-space: nowrap;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  border-style: solid;
+  border-color: white;
+}
+
+.race-nav-btn:hover {
+  color: $light-gray;
+  text-decoration: none;
+}

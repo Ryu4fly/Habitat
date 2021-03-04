@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
 
+  def after_sign_in_path_for(resource)
+    profile_path
+  end
+
   include Pundit
 
   # Pundit: white-list approach.
@@ -64,7 +68,7 @@ class ApplicationController < ActionController::Base
 
   def user_has_bets_on_race?(race)
     race.bets.each do |bet|
-      return true if bet.user == current_user
+      return bet if bet.user == current_user
     end
     return false
   end

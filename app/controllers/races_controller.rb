@@ -30,10 +30,12 @@ class RacesController < ApplicationController
 
     def create
         @race = Race.new(race_params)
-        @race.end_time = params[:start_time] + params[:duration]
+        @race.end_time = race_params[:start_time].to_time + race_params[:duration].to_i.days
+ 
+        p @race
         authorize @race
         if @race.save
-            redirect_to races_path
+            redirect_to race_path(@race)
         else
             render :new
         end
@@ -61,6 +63,16 @@ class RacesController < ApplicationController
         @my_lanes = current_user.lanes.order(created_at: :desc)
         @balance = current_user.balance
         authorize @races
+    end
+
+    def update_balance
+        p params
+        @race = Race.first
+        authorize @race
+        current_user.update(balance: params[:earned_money] + current_user.balance)
+        puts current_user.balance
+        puts "💰"
+
     end
 
     private

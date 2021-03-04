@@ -1,11 +1,16 @@
 <div class="new-race-top"></div>
 <div class="new-race-bottom"></div>
+<div class="race-nav">
+  <%= link_to  "RACE DASHBOARD", race_dashboard_path, class: 'race-nav-btn' %>
+  <%= link_to  "PROFILE", profile_path, class: 'race-nav-btn' %>
+</div>
 <div class="new-race-container">
   <div class="new-race-form-container thick-border">
     <%= simple_form_for @race do |f| %>
-      <%= f.label :start_time, "RACE START DATE:" %>
+      <%= f.label :start_time, "RACE START DATE" %>
       <%= f.date_field :start_time, min: Date.today + 1.day, max: @max_date %>
-      <%= f.input :duration, label: "RACE DURATION", input_html: {min: 5, max: 30, value: 5} %>
+      <br>
+      <%= f.input :duration, label: "RACE DURATION IN DAYS", input_html: {min: 5, max: 30, value: 5} %>
       <%= f.submit "CREATE RACE", class: 'race-btn'%>
     <% end %>
   </div>

@@ -1,0 +1,30 @@
+<div class="new-race-top"></div>
+<div class="new-race-bottom"></div>
+<div class="race-nav">
+  <%= link_to  "RACE DASHBOARD", race_dashboard_path, class: 'race-nav-btn' %>
+  <%= link_to  "PROFILE", profile_path, class: 'race-nav-btn' %>
+</div>
+<div class="game">
+  <div class="game-instructions thick-border">
+    <div class="game-stats">
+      <div class="game-current-balance">YOUR BALANCE: $<%= number_with_delimiter(@balance) %></div>
+      <div class="game-time">TIME: 0:00</div>
+      <div class="money-earned">CASH EARNED: $0</div>
+    </div>
+  </div>
+  <canvas id="game-canvas">
+  </canvas>
+  <button id="game-btn">JUMP</button>
+  <div class="game-over-screen" hidden>
+    <div class="you-lost-box">
+      <div class="game-message"></div>
+      <button id="race-dashboard-btn" class="race-btn">RACE DASHBOARD</button>
+      <button id="profile-btn" class="race-btn">PROFILE </button>
+      <button id="play-again-btn" class="race-btn">PLAY AGAIN?</button>
+    </div>
+  </div>
+</div>
+<div class="money-flash">
+  <div class="money-flash-text" hidden>$500!</div>
+</div>
+<%= javascript_pack_tag 'game' %>
