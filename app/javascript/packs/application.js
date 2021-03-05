@@ -23,7 +23,6 @@ ActiveStorage.start()
 // External imports
 import "bootstrap";
 import Iconify from '@iconify/iconify';
-import { carousel } from '../components/carousel';
 
 
 
@@ -34,5 +33,4 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   Iconify.scanDOM();
-  carousel();
 });
