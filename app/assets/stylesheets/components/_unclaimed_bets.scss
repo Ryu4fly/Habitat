@@ -1,0 +1,22 @@
+.unclaimed-bets-page {
+  width: 100vw;
+  height: 100vh;
+  padding: 24px;
+  padding-top: 64px;
+  font-family: 'VT323', monospace;
+  .race-btn {
+    border-style: outset;
+    border-width: 2px;
+    border-color: $race-gray;
+  }
+  .unclaimed-bets-winnings {
+    font-size: larger;
+  }
+}
+
+.unclaimed-bet-page-current-balance {
+  background-color: $race-gray;
+  margin: 8px;
+  font-size: 22px;
+  text-align: center;
+}

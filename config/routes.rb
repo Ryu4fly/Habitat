@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "stats", to: "entries#my_stats", as: :my_stats
   get "race-dashboard", to: "races#race_dashboard", as: :race_dashboard
   put "update-balance", to: "races#update_balance", as: :update_balance
+  get "claim-bets", to: "bets#claim_bets", as: :claim_bets
   get "game", to: "pages#game", as: :game
 
   resources :entries, only: [:index, :show, :new, :create, :destroy]

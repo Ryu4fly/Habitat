@@ -28,4 +28,8 @@ class BetPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def claim_bets?
+    true
+  end
 end
