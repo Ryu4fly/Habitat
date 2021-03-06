@@ -1,5 +1,6 @@
 .new-bet {
   font-family: 'VT323', monospace;
+  font-size: 18px;
   input {
     font-family: 'VT323', monospace;
     font-size: 22px;
@@ -101,7 +102,7 @@
   height: 100vh;
   width: 100vw;
   display: flex;
-  padding: 32px;
+  padding: 16px;
   padding-top: 96px;
   flex-direction: column;
   justify-content: space-around;
