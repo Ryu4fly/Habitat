@@ -10,7 +10,7 @@
   <% end %>
   <div class="dashboard-box thick-border">
     <div class="small-title">Nicotine Derby</div>
-    YOUR BALANCE: $<%= @balance %>
+    YOUR BALANCE: $<%= number_with_delimiter(@balance) %>
     <div class="dashboard-buttons">
       <button id="upcoming-race-btn" class="race-btn" value="upcomingRaces">UPCOMING RACES</button>
       <button id="open-race-btn" class="race-btn" value="openRaces">OPEN RACES</button>
