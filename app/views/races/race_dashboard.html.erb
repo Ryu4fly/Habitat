@@ -27,7 +27,7 @@
               <% if race_not_started?(bet.race) && betting_on_upcoming < 4 %>
                 <% betting_on_upcoming += 1%>
                 <%= link_to race_path(bet.race) do%>
-                  <div class="race-list-item"><%= betting_on_upcoming %>.  <%= short_name(bet.race) %> </div>
+                  <div class="race-list-item"><%= short_name(bet.race) %> </div>
                 <% end %>
               <% end %>
             <% end %>
@@ -41,7 +41,7 @@
               <% if race_not_started?(lane.race) && racing_in_upcoming < 4 %>
                 <% racing_in_upcoming += 1%>
                 <%= link_to race_path(lane.race) do%>
-                  <div class="race-list-item"><%= racing_in_upcoming %>.  <%= short_name(lane.race) %> </div>
+                  <div class="race-list-item"><%= short_name(lane.race) %> </div>
                 <% end %>
               <% end %>
             <% end %>
@@ -61,7 +61,7 @@
               <% if race_ongoing?(bet.race) && betting_on_open < 4 %>
                 <% betting_on_open += 1%>
                 <%= link_to race_path(bet.race) do%>
-                  <div class="race-list-item"><%= betting_on_open %>.  <%= short_name(bet.race) %> </div>
+                  <div class="race-list-item"><%= short_name(bet.race) %> </div>
                 <% end %>
               <% end %>
             <% end %>
@@ -75,7 +75,7 @@
               <% if race_ongoing?(lane.race) && racing_in_open < 4 %>
                 <% racing_in_open += 1%>
                 <%= link_to race_path(lane.race) do%>
-                  <div class="race-list-item"><%= racing_in_open %>.  <%= short_name(lane.race) %> </div>
+                  <div class="race-list-item"><%= short_name(lane.race) %> </div>
                 <% end %>
               <% end %>
             <% end %>
@@ -95,7 +95,7 @@
               <% if race_finished?(bet.race) && betting_on_completed < 4 %>
                 <% betting_on_completed += 1%>
                 <%= link_to race_path(bet.race) do%>
-                  <div class="race-list-item"><%= betting_on_completed %>.  <%= short_name(bet.race) %> </div>
+                  <div class="race-list-item"><%= short_name(bet.race) %> </div>
                 <% end %>
               <% end %>
             <% end %>
@@ -109,7 +109,7 @@
               <% if race_finished?(lane.race) && racing_in_completed < 4%>
                 <% racing_in_completed += 1 %>
                 <%= link_to race_path(lane.race) do%>
-                  <div class="race-list-item"><%= racing_in_completed %>. <%= short_name(lane.race) %></div>
+                  <div class="race-list-item"><%= short_name(lane.race) %></div>
                 <% end %>
               <% end %>
             <% end %>
