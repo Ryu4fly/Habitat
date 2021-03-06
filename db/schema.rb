@@ -21,9 +21,7 @@ ActiveRecord::Schema.define(version: 2021_03_04_105141) do
     t.bigint "lane_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "gambler_id"
     t.boolean "winnings_have_been_collected", default: false
-    t.index ["gambler_id"], name: "index_bets_on_gambler_id"
     t.index ["lane_id"], name: "index_bets_on_lane_id"
     t.index ["user_id"], name: "index_bets_on_user_id"
   end
@@ -104,7 +102,6 @@ ActiveRecord::Schema.define(version: 2021_03_04_105141) do
 
   add_foreign_key "bets", "lanes"
   add_foreign_key "bets", "users"
-  add_foreign_key "bets", "users", column: "gambler_id"
   add_foreign_key "entries", "users"
   add_foreign_key "habits", "users"
   add_foreign_key "lanes", "races"
