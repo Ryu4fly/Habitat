@@ -78,83 +78,67 @@
         background-size: cover;
       }
     }
-    .phone-demo {
+
+    .demo {
+      position: absolute;
       height: 100vh;
       width: 100vw;
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background-color: rgba(0,0,0,0.5);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      z-index: 2;
 
-      #iphonecase {
-        width: 100vw;
-        height: 80vh;
-        background-image: asset-url("iphone11");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: 50% 0;
-        position: absolute;
-        z-index: 2;
+      #how-it-works {
+        font-family: 'VT323', monospace;
+        font-size: 3rem;
+        grid-column: 1/4;
+        grid-row: 1/2;
+        text-align: center;
+        align-self: center;
       }
 
-      .screen {
-        height: 75vh;
-        width: 77vw;
-        border-radius: 30px;
+      .info {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
+        align-items: baseline;
+        justify-content: space-evenly;
 
-        .screen-dark-sheet {
-          height: 75vh;
-          width: 77vw;
-          z-index: 1;
-          background-color: rgba(0,0,0,0.62);
+        p {
+          font-family: 'VT323', monospace;
+          font-size: 1.3rem;
         }
 
-        #app-preview {
-          height: 73vh;
-          width: 77vw;
-          border-radius: 30px;
-          position: absolute;
+        .icons {
+          height: 100px;
+          width: 100px;
+          background-color: black;
+          border-radius: 12px;
           display: flex;
           justify-content: center;
           align-items: center;
-          overflow: hidden;
-
-          .images {
-            height: 75vh;
-            width: 36vh;
-            border-radius: 30px;
-            object-fit: cover;
-          }
-
-
-          .img-caption {
-            margin-bottom: 27vh;
-
-            h5 {
-              font-family: 'VT323', monospace;
-              color: white;
-              font-size: 4rem;
-              font-weight: bold;
-            }
-
-            p {
-              font-family: 'VT323', monospace;
-              color: white;
-              font-size: 1rem;
-              font-weight: bold;
-            }
-          }
-
-          .carousel-buttons {
-            z-index: 3;
-          }
+          font-size: 2rem;
         }
       }
+
+      .info-smoke {
+        grid-column: 1/4;
+        grid-row: 2/3;
+        align-self: end;
+      }
+
+      .info-progress {
+        grid-column: 1/4;
+        grid-row: 3/4;
+        align-self: end;
+      }
+
+      .info-compete {
+        grid-column: 1/4;
+        grid-row: 4/5;
+        align-self: end;
+      }
     }
+
   }
 
   .developers-container {
