@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
 
+  MONTHS = [nil, 'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER']
+
   def after_sign_in_path_for(resource)
     profile_path
   end
@@ -41,12 +43,7 @@ class ApplicationController < ActionController::Base
   end
 
   def short_name(race)
-    race_name = ''
-    race.users.each_with_index do |user, index|
-      race_name << user.username[0].upcase
-      race_name << ' vs. ' if index < race.users.length - 1
-    end
-    race_name
+    "#{MONTHS[race.start_time.month]} #{race.start_time.day} - #{MONTHS[race.end_time.month]} #{race.end_time.day}"
   end
 
   def race_not_started?(race)
