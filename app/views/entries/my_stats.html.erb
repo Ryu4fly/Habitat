@@ -1,16 +1,19 @@
 <div class='container'>
-  <h1>My Stats</h1>
+  <div class="stats-title">
+    <h1>My Stats</h1>
+    <p id="back"><%= link_to "Back", profile_path %></p>
+  </div>
   <div class="charts">
     <div class="cigarettes-chart">
-      <canvas id="cigChart" width="275px" height="240px" data-cigs="<%= @date_cigs %>"></canvas>
+      <canvas id="cigChart" width="80%" height="50%" data-cigs="<%= @date_cigs %>"></canvas>
     </div>
 
     <div class="cigarettes-chart">
-      <canvas id="feelingsChart" width="275px" height="240px" data-feelings="<%= @feelings_count.to_json %>"></canvas>
+      <canvas id="feelingsChart" width="80%" height="50%" data-feelings="<%= @feelings_count.to_json %>"></canvas>
     </div>
 
     <div class="cigarettes-chart">
-      <canvas id="contextChart" width="275px" height="240px" data-context="<%= @context_count.to_json %>"></canvas>
+      <canvas id="contextChart" width="80%" height="50%" data-context="<%= @context_count.to_json %>"></canvas>
     </div>
   </div>
 

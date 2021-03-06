@@ -40,7 +40,7 @@ class EntriesController < ApplicationController
 
     @feelings_count = get_count(@feelings)
     @context_count = get_count(@context)
-    
+
     authorize @cig_entries
   end
 
@@ -84,6 +84,7 @@ class EntriesController < ApplicationController
   def get_count(array)
     counts = Hash.new(0)
     array.each { |elem| counts[elem] += 1 }
-    counts
+    sorted_counts = counts.sort_by { |k, v| -v }
+    sorted_counts.first(5).to_h
   end
 end
