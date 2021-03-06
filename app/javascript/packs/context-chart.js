@@ -4,7 +4,7 @@ import moment from 'moment';
 const ctx = document.getElementById('contextChart');
 const dataArray = ctx.dataset.context;
 const contextObj = JSON.parse(dataArray);
-
+console.log(contextObj);
 
 const myChart = new Chart(ctx, {
     type: 'pie',
@@ -33,8 +33,13 @@ const myChart = new Chart(ctx, {
         }]
     },
     options: {
-        scales: {
-            
+        layout: {
+            padding: {
+                left: 50,
+                right: 0,
+                top: 0,
+                bottom: 0
+            }
         }
     }
 });
