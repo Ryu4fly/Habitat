@@ -94,7 +94,7 @@
         background-repeat: no-repeat;
         background-position: 50% 0;
         position: absolute;
-        z-index: 1;
+        z-index: 2;
       }
 
       .screen {
@@ -105,24 +105,52 @@
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        #app-preview {
+
+        .screen-dark-sheet {
           height: 75vh;
+          width: 77vw;
+          z-index: 1;
+          background-color: rgba(0,0,0,0.62);
+        }
+
+        #app-preview {
+          height: 73vh;
           width: 77vw;
           border-radius: 30px;
           position: absolute;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
 
           .images {
             height: 75vh;
             width: 36vh;
             border-radius: 30px;
+            object-fit: cover;
+          }
+
+
+          .img-caption {
+            margin-bottom: 27vh;
+
+            h5 {
+              font-family: 'VT323', monospace;
+              color: white;
+              font-size: 4rem;
+              font-weight: bold;
+            }
+
+            p {
+              font-family: 'VT323', monospace;
+              color: white;
+              font-size: 1rem;
+              font-weight: bold;
+            }
           }
 
           .carousel-buttons {
-            z-index: 2;
+            z-index: 3;
           }
         }
       }
@@ -144,6 +172,9 @@
       margin-top: 2vh;
 
       .select-one {
+        p {
+          padding-bottom: 2vh;
+        }
         .git-icon {
           font-size: 3rem;
         }
