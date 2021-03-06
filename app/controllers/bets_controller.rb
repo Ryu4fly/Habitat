@@ -51,6 +51,16 @@ class BetsController < ApplicationController
         end
     end
 
+    def claim_bets
+      @bets = Bet.where('user_id = ? AND winnings_have_been_collected = ?', current_user.id, false)
+      @balance = current_user.balance
+      authorize @bets
+      @unclaimed_winnings = []
+      @bets.each do |bet|
+          @unclaimed_winnings << bet if bet.race.end_time < Time.now
+      end
+    end
+
     private
 
     def bet_params

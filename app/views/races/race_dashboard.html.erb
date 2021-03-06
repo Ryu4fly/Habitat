@@ -1,4 +1,13 @@
 <div class="race-dashboard-container">
+  <div class="uncollected-earnings">
+    <% if @unclaimed_winnings.length > 0 %>
+      <div class="uncollected-earnings-box">
+        <div class="closer-btn">X</div>
+        YOU HAVE UNCOLLECTED WINNINGS FROM BETS.
+        <button class="race-btn" id="claim-money-btn">💰CLAIM MY MONEY💰</button>
+      </div>
+    </div>
+  <% end %>
   <div class="dashboard-box thick-border">
     <div class="small-title">Nicotine Derby</div>
     YOUR BALANCE: $<%= @balance %>

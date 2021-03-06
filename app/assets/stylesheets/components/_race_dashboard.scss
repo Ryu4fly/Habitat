@@ -2,7 +2,6 @@
   font-family: 'VT323', monospace;
   background-color: $dark-green;
   height: 100vh;
-  padding: 8px;
   font-size: 12px;
   text-align: center;
   a {
@@ -114,4 +113,30 @@
   align-items: center;
   justify-content: space-evenly;
   background-color: $race-gray;
+}
+
+.uncollected-earnings {
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .closer-btn {
+    position: relative;
+    left: 120px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .uncollected-earnings-box {
+    background-color: $light-gray;
+    color: black;
+    border-radius: 8px;
+    width: 280px;
+    height: 150px;
+  }
 }

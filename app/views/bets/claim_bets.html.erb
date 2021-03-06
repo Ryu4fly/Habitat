@@ -1,0 +1,22 @@
+<div class="race-nav">
+  <%= link_to  "RACE DASHBOARD", race_dashboard_path, class: 'race-nav-btn' %>
+  <%= link_to  "PROFILE", profile_path, class: 'race-nav-btn' %>
+</div>
+<div class="new-bet-top"></div>
+<div class="new-bet-bottom"></div>
+<div class="unclaimed-bets-page">
+  <div class="unclaimed-bet-page-current-balance thick-border">💰CURRENT BALANCE: $<%= number_with_delimiter(@balance)  %>💰</div>
+  <% @unclaimed_winnings.each do |bet| %>
+    <div class="race-index-custom-card thick-border" data-bet-id="<%= bet.id %>">
+      <div class="race-index-card-title">
+        <%= name_race(bet.race) %>
+      </div>
+      <br>
+      <div class="unclaimed-bets-winnings">WINNINGS: $<%= number_with_delimiter((race_pool(bet.race) / lane_total(bet.lane)) * bet.amount) %></div>
+      <%= link_to  "RACE RESULTS", race_path(bet.race), class: 'race-btn' %>
+      <button class="race-btn claim-bet-btn" data-bet-id="<%= bet.id %>" value="<%=(race_pool(bet.race) / lane_total(bet.lane)) * bet.amount%>">ADD TO MY BALANCE</button>
+    </div>
+  <% end %>
+</div>
+<div class="original-balance" data-balance="<%= @balance %>" hidden></div>
+<%= javascript_pack_tag 'claim-bets' %>
