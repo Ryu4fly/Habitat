@@ -152,6 +152,9 @@ const handleClick = () => {
   setTimeout(() => {
     btn.style.transform = 'translate(-1px, -2px)';
   }, 100);
+  if (gameStarted === 1) {
+    lungs.jump(100, true);
+  }
 
   if (!gameStarted) {
     gameStarted = 1;
@@ -162,9 +165,6 @@ const handleClick = () => {
     clouds.velX = -0.1;
     lungs.changeAnimationTo('running');
     bgm.play();
-  }
-  if (gameStarted === 1) {
-    lungs.jump(100, true);
   }
 };
 

@@ -1,10 +1,7 @@
 .race-show-top {
   position: fixed;
   top: 0vh;
-  font-family: 'VT323', monospace;
-  background-image: asset-url('opensea.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+
   height: 50vh;
   width: 100vw;
   z-index: -1;
@@ -13,18 +10,17 @@
 .race-show-bottom {
   position: fixed;
   top: 50vh;
-  background-image: asset-url('crowd.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+
   height: 50vh;
   width: 100vw;
   z-index: -1;
 }
 
 .race-ranking {
-  background-color: $race-gray;
+  background-color: #121422;
+  border-radius: 16px;
   width: 100%;
-  padding: 8px;
+  padding: 16px;
 }
 
 .race-dashboard-returner {
@@ -40,12 +36,12 @@
   text-align: center;
   border-color: white;
   border-top-style: solid;
-  border-radius: 2px;
+  border-radius: 8px;
 }
 
 .race-show {
-  font-family: 'VT323', monospace;
-  padding: 8px;
+  background: linear-gradient(207deg, rgba(79, 78, 233, 1) 0%, rgba(0, 166, 122, 1) 100%);
+  padding: 16px;
   padding-top: 48px;
   display: flex;
   min-height: 100vh;
@@ -73,5 +69,9 @@
   td {
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+
+  .new-bet-racers-info-container {
+    width: calc(100% + 16px);
   }
 }

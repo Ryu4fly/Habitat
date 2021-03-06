@@ -1,31 +1,34 @@
 .race-dashboard-container {
-  font-family: 'VT323', monospace;
   font-size: 16px;
-  background-color: $dark-green;
+  background: linear-gradient(207deg, rgba(79, 78, 233, 1) 0%, rgba(0, 166, 122, 1) 100%);
   height: 100vh;
+  width: 100vw;
   text-align: center;
   a {
     color: white;
   }
 }
 .dashboard-buttons {
+  width: 84%;
   display: flex;
+  justify-content: space-between;
   .race-btn {
+    margin: 0px;
     font-size: 16px;
-    margin-left: 0px;
-    margin-right: 0px;
-    width: fit-content;
-    border-radius: 0px;
-    border-style: groove;
   }
 }
-.thick-border {
-  border-style: solid;
-  border-width: 6px;
-  border-color: white;
-  border-radius: 8px;
-  padding: 8px;
+
+@media only screen and (max-width: 370px) {
+  .dashboard-buttons {
+    width: 100vw;
+    justify-content: space-around;
+    .race-btn {
+      margin: 0px;
+      width: fit-content;
+    }
+  }
 }
+
 .small-title {
   font-size: 22px;
   font-weight: 900;
@@ -41,7 +44,6 @@
 }
 
 .race-list-item {
-  background-color: $dark-green;
   padding: 4px;
   margin: 4px;
   border-radius: 4px;
@@ -58,22 +60,31 @@
   font-weight: 900;
 }
 .upcoming-races {
-  width: 100%;
+  width: 84%;
+  background-color: #121422;
   text-align: center;
   max-height: 25vh;
   overflow: scroll;
+  padding: 8px;
+  border-radius: 16px;
 }
 .open-races {
-  width: 100%;
+  width: 84%;
   text-align: center;
   max-height: 25vh;
   overflow: scroll;
+  background-color: #121422;
+  padding: 8px;
+  border-radius: 16px;
 }
 .completed-races {
-  width: 100%;
+  width: 84%;
   text-align: center;
   max-height: 25vh;
   overflow: scroll;
+  background-color: #121422;
+  padding: 8px;
+  border-radius: 16px;
 }
 
 .underline {
@@ -81,7 +92,8 @@
 }
 
 .menu-box {
-  width: 100%;
+  width: 84%;
+  background-color: #121422;
   text-align: center;
   height: 40vh;
   overflow-y: scroll;
@@ -89,8 +101,16 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  border-radius: 16px;
   .race-btn {
-    width: 100%;
+    transition: 0.3s;
+    width: 200px;
+  }
+}
+
+.menu-box {
+  .race-btn:hover {
+    background-color: rgb(79, 78, 233);
   }
 }
 
@@ -111,13 +131,13 @@
 }
 
 .dashboard-box {
-  height: calc(100vh - 16px);
-  width: 96%;
+  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color: $race-gray;
+  background: linear-gradient(207deg, rgba(79, 78, 233, 1) 0%, rgba(0, 166, 122, 1) 100%);
 }
 
 .uncollected-earnings {
