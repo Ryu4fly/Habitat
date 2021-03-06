@@ -1,5 +1,4 @@
 <div class="main-container">
-
   <div class="upper-section">
     <div class="user-welcome">
       <div class="avatar-img">
@@ -7,7 +6,7 @@
       </div>
       <div class="welcome-text">
         <h3>Welcome back <%= current_user.username.capitalize %></h3>
-        <p>How are you feeling today?</p>	
+        <p>How are you feeling today?</p>
         <p class="new-entry"><%= link_to "Log a new entry", new_entry_path, id: 'new-entry' %></p>
       </div>
       <p>
@@ -17,9 +16,7 @@
       </p>
     </div>
   </div>
-
   <div class="middle-section">
-
     <div class="progress-dashboard responsive-position">
       <h3>Your progress dashboard</h3>
       <div class="progress-cards">
@@ -43,26 +40,22 @@
         </div>
       </div>
     </div>
-
     <div class="link-cards">
       <%= link_to entries_path, id: 'diary-link', class: "link-card" do %>
-          <div class="svg-container">
-            <span class="iconify" data-inline="false" data-icon="fluent:book-star-24-regular" style="color: #fff;"></span>
-          </div>
-          <h5>Diary</h5>
-          <p>Find and review all your entries here</p>
+        <div class="svg-container">
+          <span class="iconify" data-inline="false" data-icon="fluent:book-star-24-regular" style="color: #fff;"></span>
+        </div>
+        <h5>Diary</h5>
+        <p>Find and review all your entries here</p>
       <% end %>
-
       <%= link_to my_stats_path, id: 'stats', class: "link-card" do %>
-          <div class="svg-container">
-            <span class="iconify" data-inline="false" data-icon="zondicons:chart-bar" style="color: #fff;"></span>
-          </div>
-          <h5>My Stats</h5>
-          <p>See the progress of your journey ro quit smoking</p>
-
+        <div class="svg-container">
+          <span class="iconify" data-inline="false" data-icon="zondicons:chart-bar" style="color: #fff;"></span>
+        </div>
+        <h5>My Stats</h5>
+        <p>See the progress of your journey ro quit smoking</p>
       <% end %>
     </div>
-
     <div class="timer">
       <div class="gradient-background outer-ring">
       </div>
@@ -72,36 +65,39 @@
           <div class="timer-count">
             <div class="unit">
               <p class="number">2</p>
-              <p>days<p>
+              <p>days
+                <p>
+                </div>
+                <div class="unit">
+                  <p class="number">15</p>
+                  <p>hours
+                    <p>
+                    </div>
+                    <div class="unit">
+                      <p class="number">37</p>
+                      <p>minutes
+                        <p>
+                        </div>
+                      </div>
+                      <h5>Keep it up!</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wave-top">
+                <div class="inner-wave-top"></div>
+              </div>
+              <div class="bottom-section">
+                <div class="spectators">
+                  <div class="derby">
+                    <h3>The Nicotine Derby</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulputate id eros, facilisi est nunc. Euismod netus semper porttitor tellus.</p>
+                    <p id="races-b"><%= link_to "Go to the races!", race_dashboard_path, id: "races-button" %></p>
+                    <%# <div class="races-link"> %>
+                    <%# <span class="iconify" data-inline="false" data-icon="noto-v1:horse-racing" style="font-size: 0.8rem;"></span> %>
+                    <%# <span class="iconify" data-inline="false" data-icon="noto-v1:horse-racing" data-flip="horizontal" style="font-size: 0.8rem;"></span> %>
+                    <%# </div> %>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="unit">
-              <p class="number">15</p>
-              <p>hours<p>
-            </div>
-            <div class="unit">
-              <p class="number">37</p>
-              <p>minutes<p>
-            </div>
-          </div>
-          <h5>Keep it up!</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="bottom-section">
-    <%= image_tag "Polygon.png" %>
-    <div class="spectators">
-      <div class="derby">
-        <h3>The Nicotine Derby</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulputate id eros, facilisi est nunc. Euismod netus semper porttitor tellus.</p>
-        <p id="races-b"><%= link_to "Go to the races!", race_dashboard_path, id: "races-button" %></p>
-        <%# <div class="races-link"> %>
-          <%# <span class="iconify" data-inline="false" data-icon="noto-v1:horse-racing" style="font-size: 0.8rem;"></span> %>
-          
-          <%# <span class="iconify" data-inline="false" data-icon="noto-v1:horse-racing" data-flip="horizontal" style="font-size: 0.8rem;"></span> %>
-        <%# </div> %>
-      </div>
-    </div>
-  </div>
-</div>

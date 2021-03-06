@@ -4,19 +4,19 @@
 
 .upper-section {
   padding: 5%;
-  background: rgb(79,78,233);
-  background: linear-gradient(207deg, rgba(79,78,233,1) 0%, rgba(0,166,122,1) 100%);
+  background: rgb(79, 78, 233);
+  background: linear-gradient(207deg, rgba(79, 78, 233, 1) 0%, rgba(0, 166, 122, 1) 100%);
 }
 
-.user-welcome { 
+.user-welcome {
   display: flex;
   // justify-content: space-around;
 }
 
 .avatar-img {
   padding: 8px;
-  img {  
-    border: 1px solid #FFFFFF;
+  img {
+    border: 1px solid #ffffff;
     padding: 2px;
   }
 }
@@ -66,7 +66,8 @@
 $height: 170px;
 
 .progress-dashboard {
-  height: $height;
+  height: fit-content;
+  padding: 16px;
   background-color: #121422;
   margin: 0 3%;
   border-radius: 40px;
@@ -94,7 +95,7 @@ $height: 170px;
     border-radius: 50%;
     font-size: 1rem;
     font-weight: 500;
-    border: 2px solid #00A67A;
+    border: 2px solid #00a67a;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,9 +141,9 @@ $height: 170px;
 
 .svg-container {
   height: 50px;
-  width:50px;
+  width: 50px;
   border-radius: 10px;
-  background: linear-gradient(207deg, rgba(79,78,233,1) 0%, rgba(0,166,122,1) 100%);
+  background: linear-gradient(207deg, rgba(79, 78, 233, 1) 0%, rgba(0, 166, 122, 1) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,7 +160,6 @@ $height: 170px;
 .timer {
   position: relative;
   overflow: hidden;
-  top: $height / 2 * -1;
   padding: 2% 0 6% 0;
 }
 
@@ -170,9 +170,19 @@ $timer-size: 300px;
   left: calc(50% - 150px);
   height: $timer-size;
   width: $timer-size;
-  background-image: linear-gradient(135deg, #FEED07 0%, #00A67A 15%, #009FAF 30%, #0096DE 40%, #0089FD 50%, #0073FF 60%, #4F4EE9 100%);
+  z-index: 1;
+  background-image: linear-gradient(
+    135deg,
+    #feed07 0%,
+    #00a67a 15%,
+    #009faf 30%,
+    #0096de 40%,
+    #0089fd 50%,
+    #0073ff 60%,
+    #4f4ee9 100%
+  );
   border-radius: 50%;
-  
+
   /*  Rotate  */
   animation-duration: 2s;
   animation-name: rotate;
@@ -180,8 +190,12 @@ $timer-size: 300px;
 }
 
 @keyframes rotate {
-    0% {transform:rotate(0deg);}
-    100% {transform:rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 $outer-circle-size: 285px;
@@ -236,20 +250,32 @@ $inner-circle-size: 270px;
 }
 
 .bottom-section {
-  img {
-    position: absolute;
-    bottom: -227px;
+  background-color: #1515d0;
+  border-top-right-radius: 80px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  position: relative;
+}
+
+.wave-top {
+  background-color: #1515d0;
+  width: 100vw;
+  height: 80px;
+  position: relative;
+  z-index: 0;
+  .inner-wave-top {
+    background-color: black;
+    height: 80px;
+    width: 100vw;
+    border-bottom-left-radius: 80px;
   }
-  background-color: #1515D0;
 }
 
 .spectators {
-  position: relative;
   margin: 0 3%;
   border: 4px solid white;
   border-radius: 40px;
-  height: 11rem;
-  bottom: 30px;
+  height: fit-content;
   background-image: url(crowd.jpg);
   background-position: center;
 }
@@ -263,11 +289,11 @@ $inner-circle-size: 270px;
   border: 3px solid white;
   border-radius: 40px;
   margin: 5%;
-  height: 130px;
+  height: fit-content;
+  padding: 16px;
   h3 {
     font-weight: 400;
     font-size: 1.5rem;
-    padding-top: 4%;
     text-decoration: underline;
   }
   p {
@@ -285,40 +311,11 @@ $inner-circle-size: 270px;
   white-space: nowrap;
   color: white;
   text-decoration: none;
+  white-space: nowrap;
   padding: 3% 5%;
   font-weight: 300;
   font-size: 0.8rem;
   width: 170%;
   border-radius: 5px;
-  margin: 10% 0;
+  margin: 8px;
 }
-
-
-
-// .gradient-background {
-//   width: 100%;
-//   height: 50%;
-//   border-radius: 50%;
-//   background: linear-gradient(222deg, #4f4ee9, #00a67a);
-//   background-size: 400% 400%;
-
-//   -webkit-animation: animated-gradient 34s ease infinite;
-//   -moz-animation: animated-gradient 34s ease infinite;
-//   animation: animated-gradient 34s ease infinite;
-// }
-
-// @-webkit-keyframes animated-gradient {
-//   0%{background-position:90% 0%}
-//   50%{background-position:11% 100%}
-//   100%{background-position:90% 0%}
-// }
-// @-moz-keyframes animated-gradient {
-//   0%{background-position:90% 0%}
-//   50%{background-position:11% 100%}
-//   100%{background-position:90% 0%}
-// }
-// @keyframes animated-gradient {
-//   0%{background-position:90% 0%}
-//   50%{background-position:11% 100%}
-//   100%{background-position:90% 0%}
-// }

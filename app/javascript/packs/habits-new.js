@@ -21,7 +21,7 @@ yesButton.addEventListener('click', () => {
 
 const refresh = () => {
   question.innerText = 'How much does a pack of cigarettes cost?';
-  numView.innerText = '';
+  numView.innerText = '$';
   which = 'cost_a_pack';
 };
 
@@ -52,7 +52,7 @@ numBtns.forEach((btn) => {
       }
       if (cost_a_pack.length) {
         cost_a_pack = cost_a_pack.slice(0, -1);
-        numView.innerText = cost_a_pack;
+        numView.innerText = `$${cost_a_pack}`;
       }
     } else if (btn.innerText === 'OK') {
       if (which === 'avg_cig' && avgCig.length > 0) {
@@ -68,8 +68,7 @@ numBtns.forEach((btn) => {
         numView.innerText = avgCig;
       } else if (which === 'cost_a_pack' && cost_a_pack.length < 4) {
         cost_a_pack += btn.innerText;
-        numView.innerText = cost_a_pack;
-        console.log('COST A PACK', cost_a_pack);
+        numView.innerText = `$${cost_a_pack}`;
       }
     }
   });
