@@ -16,6 +16,7 @@
     margin: 0px;
     font-size: 16px;
   }
+  max-width: 600px;
 }
 
 @media only screen and (max-width: 370px) {
@@ -67,6 +68,7 @@
   overflow: scroll;
   padding: 8px;
   border-radius: 16px;
+  max-width: 600px;
 }
 .open-races {
   width: 84%;
@@ -76,6 +78,7 @@
   background-color: #121422;
   padding: 8px;
   border-radius: 16px;
+  max-width: 600px;
 }
 .completed-races {
   width: 84%;
@@ -85,6 +88,7 @@
   background-color: #121422;
   padding: 8px;
   border-radius: 16px;
+  max-width: 600px;
 }
 
 .underline {
@@ -94,6 +98,7 @@
 .menu-box {
   width: 84%;
   background-color: #121422;
+  max-width: 600px;
   text-align: center;
   height: 40vh;
   overflow-y: scroll;
@@ -142,7 +147,7 @@
 
 .uncollected-earnings {
   font-size: 16px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   top: 0;
   width: 100vw;
@@ -151,17 +156,24 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  .race-btn {
+    background-color: rgb(79, 78, 233);
+  }
   .closer-btn {
     position: relative;
     left: 120px;
     font-size: 18px;
+    color: white;
     cursor: pointer;
   }
   .uncollected-earnings-box {
-    background-color: $light-gray;
-    color: black;
+    background-color: #121422;
+    border-color: white;
+    color: white;
+    border-style: solid;
     border-radius: 8px;
     width: 280px;
     height: 150px;
+    padding: 8px;
   }
 }
