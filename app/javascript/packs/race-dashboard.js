@@ -13,8 +13,8 @@ if (claimMoneyBtn) {
   });
 }
 
-const activeColor = '#312f2f';
-const inactiveColor = '#37463a';
+const activeColor = 'rgb(79, 78, 233)';
+const inactiveColor = '#121422';
 let openElement = 'openRaces';
 const buttons = {
   upcomingRacesBtn: document.getElementById('upcoming-race-btn'),

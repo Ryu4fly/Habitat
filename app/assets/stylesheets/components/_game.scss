@@ -1,24 +1,26 @@
 .game {
-  font-family: 'VT323', monospace;
   padding: 32px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  background: linear-gradient(207deg, rgba(79, 78, 233, 1) 0%, rgba(0, 166, 122, 1) 100%);
 }
 
 .game-instructions {
   font-size: 16px;
-  background-color: $race-gray;
-  padding: 8px;
+  padding: 16px;
+  border-radius: 16px;
 }
 
 #game-btn {
   border-radius: 50%;
+  height: 150px;
+  width: 150px;
   padding: 20px;
   font-size: 42px;
-  background-color: red;
+  background-color: #121422;
   border-style: outset;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
   transition: 0.1s;
@@ -30,7 +32,6 @@
 }
 
 .game-over-screen {
-  font-family: 'VT323', monospace;
   position: fixed;
   top: 0;
   height: 100vh;
@@ -47,10 +48,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $light-gray;
-    border-radius: 8px;
-    width: 250px;
-    height: 200px;
+    background-color: #121422;
+    border-radius: 16px;
+    width: 260px;
+    height: 280px;
+    padding: 16px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
     button {
       z-index: 100000;
@@ -60,7 +62,6 @@
 
 .money-flash {
   animation: blinkingText 0.3s infinite;
-  font-family: 'VT323', monospace;
   position: fixed;
   top: 0;
   font-size: 100px;

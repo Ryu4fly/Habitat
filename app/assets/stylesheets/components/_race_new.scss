@@ -2,29 +2,7 @@
   height: 100vh;
   width: 100vw;
   padding: 32px;
-}
-
-.new-race-top {
-  position: fixed;
-  top: 0px;
-  width: 100vw;
-  background-image: asset-url('opensea.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 50vh;
-  z-index: -1;
-}
-
-.new-race-bottom {
-  position: fixed;
-  top: 50vh;
-
-  background-image: asset-url('crowd.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 50vh;
-  z-index: -1;
+  background: linear-gradient(207deg, rgba(79, 78, 233, 1) 0%, rgba(0, 166, 122, 1) 100%);
 }
 
 .new-race-container {
@@ -35,8 +13,9 @@
 
 .new-race-form-container {
   flex-grow: 1;
-  background-color: $race-gray;
-  font-family: 'VT323', monospace;
+  padding: 8px;
+  border-radius: 16px;
+  background-color: #121422;
   text-align: center;
   form {
     display: flex;
