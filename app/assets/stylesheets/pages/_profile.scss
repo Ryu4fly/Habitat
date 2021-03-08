@@ -10,6 +10,7 @@
 
 .user-welcome {
   display: flex;
+  // margin: 0 10%;
   // justify-content: space-around;
 }
 
@@ -22,15 +23,15 @@
 }
 
 .welcome-text {
-  margin-top: 1.4rem;
+  margin-top: 1rem;
   padding-left: 1%;
   flex-grow: 1;
   h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0;
+    font-size: 1.7rem;
+    margin-bottom: 0.2rem;
   }
   p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 300;
   }
 }
@@ -38,15 +39,15 @@
 .new-entry {
   text-align: center;
   display: inline-block;
-  margin-top: 10%;
-  margin-bottom: 37%;
+  margin-top: 40px;
+  margin-bottom: 100px;
   #new-entry {
     background-color: transparent;
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     text-decoration: none;
     color: white;
     padding: 8px 24px;
-    border-radius: 20px;
+    border-radius: 22px;
     text-align: left;
     display: inline;
     border-width: 1px;
@@ -57,10 +58,14 @@
 #logout {
   padding-right: 2%;
   i {
-    font-size: 0.8rem;
+    font-size: 1.5rem;
     color: white;
     padding-right: 2%;
   }
+}
+
+.middle-section {
+  margin: 0 3%;
 }
 
 $height: 170px;
@@ -69,14 +74,15 @@ $height: 170px;
   height: fit-content;
   padding: 16px;
   background-color: #121422;
-  margin: 0 3%;
+  // margin: 0 3%;
   border-radius: 40px;
   position: relative;
   top: $height / 2 * -1;
   h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: center;
     padding: 3% 0;
+    font-weight: 400;
   }
 }
 
@@ -90,30 +96,30 @@ $height: 170px;
   flex-direction: column;
   align-items: center;
   .number {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    font-size: 1rem;
     font-weight: 500;
-    border: 2px solid #00a67a;
+    border: 3px solid #00a67a;
     display: flex;
     justify-content: center;
     align-items: center;
     p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
   }
   .elem-text {
     font-weight: 300;
     padding-top: 0.5rem;
-    font-size: 0.7rem;
+    font-size: 1rem;
+    text-align: center;
   }
 }
 
 .link-cards {
   display: flex;
   justify-content: space-between;
-  margin: 3%;
+  margin-top: 3%;
 }
 
 .link-card {
@@ -128,13 +134,14 @@ $height: 170px;
   flex-direction: column;
   align-content: center;
   align-items: center;
-  padding: 3% 8%;
+  padding: 3% 7%;
   text-align: center;
   h5 {
     margin: 5% 0;
+    font-size: 1.5rem;
   }
   p {
-    font-size: 0.6rem;
+    font-size: 1rem;
     font-weight: 300;
   }
 }
@@ -250,7 +257,8 @@ $inner-circle-size: 270px;
 }
 
 .bottom-section {
-  background-color: #1515d0;
+  // background-color: #1515d0;
+  background: linear-gradient(207deg, rgba(79, 78, 233, 1) 0%, rgba(0, 166, 122, 1) 100%);
   border-top-right-radius: 80px;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -258,15 +266,15 @@ $inner-circle-size: 270px;
 }
 
 .wave-top {
-  background-color: #1515d0;
-  width: 100vw;
+  background: #3C8B9E;
+  // width: 100vw;
   height: 80px;
   position: relative;
   z-index: 0;
   .inner-wave-top {
-    background-color: black;
+    background-color: #030306;
     height: 80px;
-    width: 100vw;
+    // width: 100vw;
     border-bottom-left-radius: 80px;
   }
 }
@@ -281,23 +289,24 @@ $inner-circle-size: 270px;
 }
 
 .derby {
-  background-color: #37463A;
+  background-color: #121422;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   border: 3px solid white;
   border-radius: 40px;
-  margin: 5%;
+  margin: 5% 10%;
   height: fit-content;
-  padding: 16px;
+  padding: 25px;
   h3 {
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-decoration: underline;
   }
   p {
     padding: 0 8%;
+    font-size: 1rem;
   }
 }
 
@@ -306,15 +315,15 @@ $inner-circle-size: 270px;
 }
 
 #races-button {
-  border: 1px solid white;
-  background-color: #2C2B2B;
+  // border: 1px solid white;
+  background-color: #121422;
   white-space: nowrap;
-  color: white;
+  color: #4F4EE9;
   text-decoration: none;
   white-space: nowrap;
   padding: 3% 5%;
   font-weight: 300;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   width: 170%;
   border-radius: 5px;
   margin: 8px;

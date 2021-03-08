@@ -12,4 +12,13 @@ class PagesController < ApplicationController
     @balance = current_user.balance
   end
 
+  def money_saved
+    pack = current_user.habits.cost_a_pack
+    avg_cigs = current_user.habits.avg_cig
+
+    cost_per_cig = pack / 20
+    entries = current_user.entries
+    raise
+  end
+
 end

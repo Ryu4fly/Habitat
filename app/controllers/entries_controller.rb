@@ -55,23 +55,23 @@ class EntriesController < ApplicationController
     params.require(:entry).permit(:date, :feeling, :craving, :cig_smoked, :context)
   end
 
-  def reduce_same_date_entries(entries)
-    date_cig = []
-    entries.each do |entry|
-      dates = date_cig.map { |ary| ary[0] }
-      if date_cig.empty? || !dates.include?(entry.date.to_s)
-        cig_entry = [
-          entry.date.to_s,
-          entry.cig_smoked
-        ]
-        date_cig << cig_entry
-      else
-        existing_date = date_cig.select { |ary| ary[0] == entry.date.to_s }
-        existing_date[0][1] += entry.cig_smoked
-      end
-    end
-    date_cig
-  end
+  # def reduce_same_date_entries(entries)
+  #   date_cig = []
+  #   entries.each do |entry|
+  #     dates = date_cig.map { |ary| ary[0] }
+  #     if date_cig.empty? || !dates.include?(entry.date.to_s)
+  #       cig_entry = [
+  #         entry.date.to_s,
+  #         entry.cig_smoked
+  #       ]
+  #       date_cig << cig_entry
+  #     else
+  #       existing_date = date_cig.select { |ary| ary[0] == entry.date.to_s }
+  #       existing_date[0][1] += entry.cig_smoked
+  #     end
+  #   end
+  #   date_cig
+  # end
 
   def get_feelings(entries)
     entries.map { |entry| entry.feeling }
