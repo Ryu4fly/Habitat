@@ -12,7 +12,7 @@
     .cover-sheet {
       width: 100vw;
       height: 100vh;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0,0,0,0.7);
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: repeat(5, 1fr);
@@ -21,13 +21,12 @@
         grid-column: 1/6;
         grid-row: 2/4;
         align-self: center;
-        margin-left: 10vw;
+        margin-left: 5vw;
         margin-bottom: 0;
-        font-family: 'VT323', monospace;
 
         h1 {
           font-size: 3rem;
-          font-family: 'VT323', monospace;
+          color: white;
         }
 
         p {
@@ -36,19 +35,39 @@
 
         button {
           margin-top: 2vh;
-          width: 30vw;
+          width: 40vw;
+          height: 6vh;
           padding: 0;
           font-size: 1.5rem;
+          background: linear-gradient(207deg, rgba(79, 78, 233, 1) 0%, rgba(0, 166, 122, 1) 100%);
         }
       }
 
       .down-arrow {
+        position: relative;
         grid-column: 1/6;
         grid-row: 5/6;
         justify-self: center;
         align-self: end;
         font-size: 3rem;
         padding-bottom: 1vh;
+        animation-name: bounce;
+        animation-duration: 1.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      @keyframes bounce {
+        0% {
+          top: 0;
+        }
+
+        50% {
+          top: -10%;
+        }
+
+        100% {
+          top: 0;
+        }
       }
     }
   }
@@ -71,7 +90,6 @@
       z-index: 2;
 
       #how-it-works {
-        font-family: 'VT323', monospace;
         font-size: 3rem;
         grid-column: 1/4;
         grid-row: 1/2;
@@ -81,23 +99,23 @@
 
       .info {
         display: flex;
-        align-items: baseline;
+        align-items: center;
         justify-content: space-evenly;
 
         p {
-          font-family: 'VT323', monospace;
-          font-size: 1.3rem;
+          font-size: 1.2rem;
         }
 
         .icons {
           height: 100px;
           width: 100px;
-          background-color: black;
+          background-color: transparent;
           border-radius: 12px;
           display: flex;
           justify-content: center;
           align-items: center;
-          font-size: 2rem;
+          font-size: 3rem;
+          border: solid 2px;
         }
       }
 
@@ -193,3 +211,119 @@
     }
   }
 }
+
+@media (min-width: 1400px) and (max-width: 1590px) {
+  .banner {
+    .cover-sheet {
+      .title {
+        grid-column: 2/4;
+      }
+    }
+  }
+}
+@media (min-width: 1600px) and (max-width: 1890px) {
+  .banner {
+    .cover-sheet {
+      .title {
+        grid-column: 2/4;
+      }
+    }
+  }
+}
+@media (min-width: 1900px) {
+  .landing-container {
+    .banner {
+      background-size: cover;
+      background-position: 0% 40%;
+
+      .cover-sheet {
+        .title {
+          grid-column: 2/4;
+          margin: 0;
+
+          h1 {
+            font-size: 5rem;
+          }
+
+          p {
+            font-size: 2.5rem;
+          }
+          button {
+            width: 20vw;
+          }
+        }
+        .down-arrow {
+          position: relative;
+          font-size: 4rem;
+        }
+      }
+    }
+
+    .about-app {
+      .demo {
+        .info-smoke {
+          grid-column: 1/3;
+          grid-row: 2/3;
+        }
+        .info-progress {
+          grid-column: 2/4;
+          grid-row: 3/4;
+        }
+        .info-compete {
+          grid-column: 1/3;
+          grid-row: 4/5;
+        }
+        .info {
+          justify-self: center;
+
+          .icons {
+            height: 150px;
+            width: 150px;
+            font-size: 5rem;
+          }
+          p {
+            font-size: 2rem;
+            margin-left: 3vw;
+          }
+
+          #track-text {
+            margin-left: 0;
+            margin-right: 3vw;
+          }
+        }
+      }
+    }
+
+    .developers-container {
+
+      .developers {
+        h4 {
+          font-size: 4rem;
+        }
+
+        .select-one {
+          p {
+            font-size: 1.5rem;
+          }
+
+          .git-icon {
+            font-size: 4.5rem !important;
+          }
+        }
+      }
+
+      .git-profiles{
+        grid-row: 2/6;
+        justify-content: space-around;
+        margin-bottom: 3vh;
+      }
+
+      .footer {
+        .sponsor {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
