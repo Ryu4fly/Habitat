@@ -23,25 +23,24 @@ button {
 }
 
 .race-btn {
-  font-family: 'VT323', monospace;
   border-radius: 20px;
   min-width: 100px;
   padding: 8px;
   margin: 8px;
-  background-color: $dark-green;
+  background-color: transparent;
   white-space: nowrap;
   color: white;
+  border-style: solid;
+  border-color: white;
 }
 
 .race-btn:hover {
-  color: $light-gray;
   text-decoration: none;
 }
 
 .race-nav-btn {
-  font-family: 'VT323', monospace;
   flex-grow: 1;
-  background-color: $dark-green;
+  background-color: transparent;
   white-space: nowrap;
   color: white;
   padding: 8px;

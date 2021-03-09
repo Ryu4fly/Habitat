@@ -4,23 +4,21 @@
   position: fixed;
   z-index: 100;
   margin-bottom: 10px;
+  background-color: rgb(79, 78, 233);
+  .race-nav-btn {
+    width: 100%;
+  }
 }
 
 .race-index {
-  font-family: 'VT323', monospace;
+  background: linear-gradient(207deg, rgba(79, 78, 233, 1) 0%, rgba(0, 166, 122, 1) 100%);
 }
 
 .race-index-top {
-  background-image: asset-url('opensea.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
   height: 50vh;
 }
 
 .race-index-bottom {
-  background-image: asset-url('crowd.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
   height: 50vh;
 }
 
@@ -40,7 +38,7 @@
 }
 
 .race-index-custom-card {
-  background-color: $race-gray;
+  background-color: #121422;
   padding: 16px;
   margin: 8px;
   border-radius: 8px;
