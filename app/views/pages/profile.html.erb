@@ -22,13 +22,14 @@
       <div class="progress-cards">
         <div class="progress-element">
           <div class="number">
-            <p>21$</p>
+            <p><%= @counters[:total_money] %></p>
+            <p>¥</p>
           </div>
           <p class="elem-text">Money Saved</p>
         </div>
         <div class="progress-element">
           <div class="number">
-            <p>56</p>
+            <p><%= @counters[:total_cigs] %></p>
           </div>
           <p class="elem-text">Cigarettes Not Smoked</p>
         </div>
@@ -53,7 +54,7 @@
           <span class="iconify" data-inline="false" data-icon="zondicons:chart-bar" style="color: #fff;"></span>
         </div>
         <h5>My Stats</h5>
-        <p>See the progress of your journey ro quit smoking</p>
+        <p>See the progress of your journey to quit smoking</p>
       <% end %>
     </div>
     <div class="timer">
@@ -88,16 +89,11 @@
                 <div class="inner-wave-top"></div>
               </div>
               <div class="bottom-section">
-                <div class="spectators">
                   <div class="derby">
                     <h3>The Nicotine Derby</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulputate id eros, facilisi est nunc. Euismod netus semper porttitor tellus.</p>
                     <p id="races-b"><%= link_to "Go to the races!", race_dashboard_path, id: "races-button" %></p>
-                    <%# <div class="races-link"> %>
-                    <%# <span class="iconify" data-inline="false" data-icon="noto-v1:horse-racing" style="font-size: 0.8rem;"></span> %>
-                    <%# <span class="iconify" data-inline="false" data-icon="noto-v1:horse-racing" data-flip="horizontal" style="font-size: 0.8rem;"></span> %>
-                    <%# </div> %>
+                    
                   </div>
-                </div>
               </div>
             </div>

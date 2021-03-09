@@ -32,6 +32,7 @@ class ApplicationController < ActionController::Base
   helper_method :avg_cig
   helper_method :lane_total
   helper_method :race_pool
+  helper_method :reduce_same_date_entries
 
   def name_race(race)
       race_name = ''
@@ -102,6 +103,23 @@ class ApplicationController < ActionController::Base
       total
   end
 
+  def reduce_same_date_entries(entries)
+    date_cig = []
+    entries.each do |entry|
+      dates = date_cig.map { |ary| ary[0] }
+      if date_cig.empty? || !dates.include?(entry.date.to_s)
+        cig_entry = [
+          entry.date.to_s,
+          entry.cig_smoked
+        ]
+        date_cig << cig_entry
+      else
+        existing_date = date_cig.select { |ary| ary[0] == entry.date.to_s }
+        existing_date[0][1] += entry.cig_smoked
+      end
+    end
+    date_cig
+  end
 
   private
 
