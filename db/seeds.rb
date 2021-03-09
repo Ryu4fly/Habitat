@@ -18,22 +18,11 @@ puts "Generating new users..."
   user.username = random_username
   habit = Habit.new
   habit.avg_cig = rand(1..200)
-  habit.cost_a_pack = rand(1.00..20.00).round(2)
+  habit.cost_a_pack = rand(2.00..7.00).round(2)
   user.habit = habit
   user.save
   puts "new user ✨#{user.id} - #{user.email} \n habit 👉 #{user.habit.avg_cig} cigs a day at #{user.habit.cost_a_pack}$ per pack."
 end
-
-ryugi = User.new
-ryugi.email = 'ryugi@ryugi.edu'
-ryugi.password = '123456'
-ryugi.username = 'ryugi1973'
-ryugishabit = Habit.new
-ryugishabit.avg_cig = rand(1..200)
-ryugishabit.cost_a_pack = rand(1.00..20.00).round(2)
-ryugi.habit = ryugishabit
-ryugi.save
-
 
 def days_in_month(month)
   if [1,3,5, 7, 8, 10, 12].include?(month)
@@ -50,17 +39,44 @@ end
 
 1600.times do
   entry = Entry.new
-  year = Time.now.year
-  date = DateTime.new(year, rand(1..Time.now.month), rand(1..27), rand(1..12), rand(1..35), rand(1..45))
-  entry.date = date
+  entry.date = Time.now - rand(0..30).days
   entry.feeling = Entry::FEELINGS.sample
   entry.context = Entry::CONTEXT.sample
   entry.user = User.all.sample
   entry.craving = rand(1..10)
-  entry.cig_smoked = rand(6..12)
+  entry.cig_smoked = rand(0..12)
   entry.save
   puts "New entry: #{entry.date}, feeling - #{entry.feeling}, craving - #{entry.craving}, cig smoked: #{entry.cig_smoked}"
 end
+
+ryugi = User.new
+ryugi.email = 'ryugi@ryugi.edu'
+ryugi.password = '123456'
+ryugi.username = 'ryugi'
+ryugishabit = Habit.new
+ryugishabit.avg_cig = rand(20)
+ryugishabit.cost_a_pack = 5.00
+ryugi.habit = ryugishabit
+ryugi.save
+
+puts "Created Ryugi 💣🔥"
+30.times do
+  rand(1..3).times do
+    entry = Entry.new
+    entry.user = ryugi
+    entry.date = Time.now - rand(0..30).days
+    entry.feeling = Entry::FEELINGS.sample
+    entry.context = Entry::CONTEXT.sample
+    entry.craving = rand(1..10)
+    chooser = rand(1..2)
+    entry.cig_smoked = chooser == 1 ? 0 : rand(1..5)
+    entry.save
+    puts "On #{entry.date.to_formatted_s(:long_ordinal)} Ryugi smoked #{entry.cig_smoked} cigarettes 🚬. He says \"#{entry.context}\" and he feels #{entry.feeling}"
+
+  end
+end
+
+
 
 def add_losses_and_wins_to_old_races(race)
   if race.end_time < Time.now
