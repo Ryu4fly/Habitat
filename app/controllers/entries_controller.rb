@@ -31,7 +31,7 @@ class EntriesController < ApplicationController
   end
 
   def my_stats
-    @cig_entries = Entry.where('cig_smoked > 0').order(date: :asc)
+    @cig_entries = Entry.where('cig_smoked > 0 AND user_id = ?', current_user.id).order(date: :asc)
     @date_cigs = reduce_same_date_entries(@cig_entries)
 
     @entries = Entry.all

@@ -60,20 +60,21 @@ ryugi.habit = ryugishabit
 ryugi.save
 
 puts "Created Ryugi 💣🔥"
+counter = 30
 30.times do
   rand(1..3).times do
     entry = Entry.new
     entry.user = ryugi
-    entry.date = Time.now - rand(0..30).days
+    entry.date = Time.now - counter.days
     entry.feeling = Entry::FEELINGS.sample
     entry.context = Entry::CONTEXT.sample
     entry.craving = rand(1..10)
     chooser = rand(1..2)
-    entry.cig_smoked = chooser == 1 ? 0 : rand(1..5)
+    entry.cig_smoked = chooser == 1 ? 0 : rand(1..2) * (counter / 3)
     entry.save
     puts "On #{entry.date.to_formatted_s(:long_ordinal)} Ryugi smoked #{entry.cig_smoked} cigarettes 🚬. He says \"#{entry.context}\" and he feels #{entry.feeling}"
-
   end
+  counter -= 1
 end
 
 
