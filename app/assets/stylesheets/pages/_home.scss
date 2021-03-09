@@ -293,6 +293,37 @@
         }
       }
     }
+
+    .developers-container {
+
+      .developers {
+        h4 {
+          font-size: 4rem;
+        }
+
+        .select-one {
+          p {
+            font-size: 1.5rem;
+          }
+
+          .git-icon {
+            font-size: 4.5rem !important;
+          }
+        }
+      }
+
+      .git-profiles{
+        grid-row: 2/6;
+        justify-content: space-around;
+        margin-bottom: 3vh;
+      }
+
+      .footer {
+        .sponsor {
+          font-size: 1rem;
+        }
+      }
+    }
   }
 }
 
