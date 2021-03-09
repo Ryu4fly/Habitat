@@ -6,19 +6,28 @@ class PagesController < ApplicationController
 
   def profile
     @habits = current_user.habit
+
+    pack = current_user.habit.cost_a_pack
+    avg_cigs = current_user.habit.avg_cig
+
+    cost_per_cig = pack / 20
+    avg_cost = cost_per_cig * avg_cigs
+    entries = current_user.entries.order(date: :asc)
+    daily_cigs = reduce_same_date_entries(entries)
+    days = (entries.first.date..Date.today)
+
+    days.each do |day| 
+      puts day 
+    end
+
+    # money_saved = daily_cigs.map do |entry|
+    #   money = 0
+      
+    # end
+    raise
   end
 
   def game
     @balance = current_user.balance
   end
-
-  def money_saved
-    pack = current_user.habits.cost_a_pack
-    avg_cigs = current_user.habits.avg_cig
-
-    cost_per_cig = pack / 20
-    entries = current_user.entries
-    raise
-  end
-
 end
