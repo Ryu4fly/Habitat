@@ -116,6 +116,14 @@ $height: 170px;
   }
 }
 
+#balance-color {
+  border-color: #4F4EE9;
+}
+
+#cigs-color {
+  border-color: #0073FF;
+}
+
 .link-cards {
   display: flex;
   justify-content: space-between;
@@ -266,7 +274,7 @@ $inner-circle-size: 270px;
 }
 
 .wave-top {
-  background: #3C8B9E;
+  background: #346CC3;
   // width: 100vw;
   height: 80px;
   position: relative;
@@ -315,16 +323,16 @@ $inner-circle-size: 270px;
 }
 
 #races-button {
-  // border: 1px solid white;
-  background-color: #121422;
+  border: 2px solid white;
+  background-color: #4F4EE9;
   white-space: nowrap;
-  color: #4F4EE9;
+  color: white;
   text-decoration: none;
   white-space: nowrap;
   padding: 3% 5%;
   font-weight: 300;
   font-size: 1.5rem;
   width: 170%;
-  border-radius: 5px;
+  border-radius: 15px;
   margin: 8px;
 }

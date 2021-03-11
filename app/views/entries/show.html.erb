@@ -1,6 +1,5 @@
 <div class="diary">
   <div class="nav">
-    <p id="back"><%= link_to "Back", entries_path %></p>
     <p id="delete" >
       <%= link_to "Delete",
               entry_path(@entry),
@@ -8,9 +7,10 @@
               data: { confirm: "Are you sure?" }
               %>
     </p>
+    <p id="back"><%= link_to "Back", entries_path %></p>
   </div>
   <div class="entry-show">
-    <div class="title">
+    <div id="entry-title" class="title">
       <% if @entry.cig_smoked.zero? %>
         <h1 class="overcome">I overcame a craving</h1>
       <% else %>

@@ -9,6 +9,8 @@ class PagesController < ApplicationController
     daily_cigs = reduce_same_date_entries(entries)
     days = (entries.first.date..Date.today).to_a
     @counters = calculate_money_and_cigs(daily_cigs, days)
+
+    @user_balance = current_user.balance
   end
 
   def game
