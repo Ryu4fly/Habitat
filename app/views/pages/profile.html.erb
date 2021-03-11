@@ -23,21 +23,21 @@
         <div class="progress-element">
           <div class="number">
             <p><%= @counters[:total_money] %></p>
-            <p>¥</p>
+            <p>$</p>
           </div>
           <p class="elem-text">Money Saved</p>
         </div>
         <div class="progress-element">
-          <div class="number">
+          <div id="cigs-color" class="number">
             <p><%= @counters[:total_cigs] %></p>
           </div>
           <p class="elem-text">Cigarettes Not Smoked</p>
         </div>
         <div class="progress-element">
-          <div class="number">
-            <p>2</p>
+          <div id="balance-color" class="number">
+            <p><%= @user_balance %>$</p>
           </div>
-          <p class="elem-text">Races Won</p>
+          <p class="elem-text">Races Balance</p>
         </div>
       </div>
     </div>
@@ -66,34 +66,37 @@
           <div class="timer-count">
             <div class="unit">
               <p class="number">2</p>
-              <p>days
-                <p>
-                </div>
-                <div class="unit">
-                  <p class="number">15</p>
-                  <p>hours
-                    <p>
-                    </div>
-                    <div class="unit">
-                      <p class="number">37</p>
-                      <p>minutes
-                        <p>
-                        </div>
-                      </div>
-                      <h5>Keep it up!</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="wave-top">
-                <div class="inner-wave-top"></div>
-              </div>
-              <div class="bottom-section">
-                  <div class="derby">
-                    <h3>The Nicotine Derby</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulputate id eros, facilisi est nunc. Euismod netus semper porttitor tellus.</p>
-                    <p id="races-b"><%= link_to "Go to the races!", race_dashboard_path, id: "races-button" %></p>
-                    
-                  </div>
-              </div>
+              <p>days<p>
             </div>
+            <div class="unit">
+              <p class="number">15</p>
+              <p>hours<p>
+            </div>
+            <div class="unit">
+              <p class="number">37</p>
+              <p>minutes</p>
+            </div>
+          </div>
+          <h5>Keep it up!</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wave-top">
+    <div class="inner-wave-top"></div>
+  </div>
+  <div class="bottom-section">
+      <div class="derby">
+        <h3>The Nicotine Derby</h3>
+        <p>Commit to quit your smoke addiction and challenge other users to smoke less and less every day!<br>Not a smoker? Encourage the users participating by betting on them and follow their progress throughout the race!</p>
+        <p id="races-b"><%= link_to "Go to the races!", race_dashboard_path, id: "races-button" %></p>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+

@@ -4,6 +4,10 @@
   justify-content: space-between;
 }
 
+#entry-title h1 {
+  font-size: 2.5rem;
+}
+
 #delete {
   padding-top: 1rem;
   a {
@@ -18,15 +22,15 @@
   justify-content: space-between;
   padding-bottom: 1.7rem;
   p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 400;
   }
 }
 
 .smoked {
-  color: #68E2F6;
+  color: #0096DE;
 }
 
 .overcome {
-  color: #7EF49F;
+  color: #00a67a;
 }
