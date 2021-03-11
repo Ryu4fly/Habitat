@@ -22,8 +22,8 @@
       <div class="progress-cards">
         <div class="progress-element">
           <div class="number">
-            <p><%= @counters[:total_money] %></p>
             <p>$</p>
+            <p><%= @counters[:total_money] %></p>
           </div>
           <p class="elem-text">Money Saved</p>
         </div>
@@ -35,7 +35,7 @@
         </div>
         <div class="progress-element">
           <div id="balance-color" class="number">
-            <p><%= @user_balance %>$</p>
+            <p>$<%= @user_balance %></p>
           </div>
           <p class="elem-text">Races Balance</p>
         </div>
@@ -88,7 +88,7 @@
   <div class="bottom-section">
       <div class="derby">
         <h3>The Nicotine Derby</h3>
-        <p>Commit to quit your smoke addiction and challenge other users to smoke less and less every day!<br>Not a smoker? Encourage the users participating by betting on them and follow their progress throughout the race!</p>
+        <p>Aim to reduce the amount you smoke, race against others and win the Nicotine Derby!<br>Not a smoker? Encourage the users participating by betting on them and follow their progress throughout the race!</p>
         <p id="races-b"><%= link_to "Go to the races!", race_dashboard_path, id: "races-button" %></p>
       </div>
   </div>
