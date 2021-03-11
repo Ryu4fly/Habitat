@@ -7,10 +7,18 @@ class PagesController < ApplicationController
   def profile
     entries = current_user.entries.order(date: :asc)
     daily_cigs = reduce_same_date_entries(entries)
-    days = (entries.first.date..Date.today).to_a
-    @counters = calculate_money_and_cigs(daily_cigs, days)
-
     @user_balance = current_user.balance
+
+    if  entries.first
+      days = (entries.first.date..Date.today).to_a
+      @counters = calculate_money_and_cigs(daily_cigs, days)
+    else
+      @counters = {
+      total_money: 0,
+      total_cigs: 0
+    }
+    end
+
   end
 
   def game

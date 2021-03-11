@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   MONTHS = [nil, 'JAN.', 'FEB.', 'MAR.', 'APR.', 'MAY', 'JUNE', 'JULY', 'AUG.', 'SEPT.', 'OCT.', 'NOV.', 'DEC.']
 
   def after_sign_in_path_for(resource)
-    profile_path
+    race_dashboard_path
   end
 
   include Pundit
