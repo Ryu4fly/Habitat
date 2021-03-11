@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  match '(*any)', to: redirect(subdomain: 'www'), via: :all, constraints: {subdomain: ''}
   get 'errors/not_found'
   get 'errors/internal_server_error'
   get 'users/update'
