@@ -13,7 +13,8 @@
     "moment": "^2.29.1",
     "popper.js": "^1.16.1",
     "s2pd": "^1.1.1",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "webpacker-pwa": "^0.1.2"
   },
   "version": "0.1.0",
   "devDependencies": {
